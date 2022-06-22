@@ -4,7 +4,7 @@ import IvdLogoColor from "../../public/ivd-logo-color.svg";
 
 const Navigation: React.FC = () => {
   return (
-    <nav className="absolute top-0 left-0 right-0 h-40 px-32 flex items-center justify-between">
+    <nav className="absolute top-0 left-0 right-0 h-40 px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 flex items-center justify-between z-50">
       <a href="/">
         <Image src={IvdLogoColor} alt="Invader Logo" />
       </a>

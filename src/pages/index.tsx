@@ -14,15 +14,17 @@ const Home: NextPage = () => {
   return (
     <>
       <Navigation />
-      <Hero />
-      <Links />
-      <Hr />
-      <Techniques />
-      <Hr />
-      <Blogs />
-      <Hr />
-      <About />
-      <Community />
+      <main>
+        <Hero />
+        <Links />
+        <Hr />
+        <Techniques />
+        <Hr />
+        <Blogs />
+        <Hr />
+        <About />
+        <Community />
+      </main>
       <Footer />
     </>
   );
