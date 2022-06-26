@@ -7,7 +7,7 @@ interface Props {
   blogPreviews: BlogPreviewInterface[]
 }
 
-const Blogs: React.FC = ({ blogPreviews }: Props) => {
+const Blogs: React.FC<Props> = ({ blogPreviews }: Props) => {
   return (
     <section
       id="blog"

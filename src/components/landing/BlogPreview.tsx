@@ -8,7 +8,7 @@ interface Props {
 }
 
 //display image urlFor(blogPreview.previewImage).url()
-const BlogPreview: React.FC = ({ blogPreview }: Props) => {
+const BlogPreview: React.FC<Props> = ({ blogPreview }: Props) => {
   return (
     <Link href={`article/${blogPreview.slug}`}>
       <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">

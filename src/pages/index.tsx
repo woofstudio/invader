@@ -14,7 +14,7 @@ interface Props {
   blogPreviews: BlogPreviewInterface[]
 }
 
-const Home: NextPage = ({ blogPreviews }: Props) => {
+const Home: NextPage<Props> = ({ blogPreviews }: Props) => {
   return (
     <>
       <main>

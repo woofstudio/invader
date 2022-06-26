@@ -6,7 +6,7 @@ interface Props {
   blog: BlogInterface
   blogPreviews: BlogPreviewInterface
 }
-const Blog: NextPage = ({ blog, blogPreviews }: Props) => {
+const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
   return (
     // mainImage
     // category
