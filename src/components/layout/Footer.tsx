@@ -3,17 +3,23 @@ import Link from "next/link";
 import { FiChevronUp } from "react-icons/fi";
 import { ImYoutube } from "react-icons/im";
 import { IoLogoFacebook } from "react-icons/io";
-import IvdLogoColor from "../../public/ivd-logo-color.svg";
-import IvdLogoName from "../../public/ivd-logo-name.png";
+import IvdLogoColor from "../../../public/ivd-logo-color.svg";
+import IvdLogoName from "../../../public/ivd-logo-name.png";
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0">
-      <a href="/" className="2xl:hidden block">
-        <Image src={IvdLogoColor} layout="fixed" />
+      <a
+        href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2"
+        className="2xl:hidden block"
+      >
+        <Image src={IvdLogoColor} alt="logo-color" layout="fixed" />
       </a>
-      <a href="/" className="hidden 2xl:block">
-        <Image src={IvdLogoName} />
+      <a
+        href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2"
+        className="hidden 2xl:block"
+      >
+        <Image src={IvdLogoName} alt="logo-name" />
       </a>
 
       {/* mobile links */}
@@ -51,10 +57,10 @@ const Footer: React.FC = () => {
           <FiChevronUp />
         </div>
         <div className="flex items-center text-white text-4xl space-x-6">
-          <a href="/">
+          <a href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2">
             <IoLogoFacebook />
           </a>
-          <a href="/">
+          <a href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2">
             <ImYoutube />
           </a>
         </div>
@@ -71,5 +77,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;
