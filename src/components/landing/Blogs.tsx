@@ -1,7 +1,13 @@
-import moment from "moment";
-import Link from "next/link";
+import moment from 'moment'
+import Link from 'next/link'
+import { BlogPreviewInterface } from '../../types/interface'
+import BlogPreview from './BlogPreview'
 
-const Blogs: React.FC = () => {
+interface Props {
+  blogPreviews: BlogPreviewInterface[]
+}
+
+const Blogs: React.FC = ({ blogPreviews }: Props) => {
   return (
     <section
       id="blog"
@@ -19,69 +25,12 @@ const Blogs: React.FC = () => {
         </Link>
       </div>
       <div className="grid grid-cols-2 w-[65%] gap-6">
-        <Link href="/">
-          <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">
-            <div className="z-20 p-8 space-y-4">
-              {/* title */}
-              <h3 className="font-medium text-3xl">
-                เพชรฆาตหน้าทารก : Thomas Dwan
-              </h3>
-              {/* posted date */}
-              <h4 className="font-extralight">
-                {moment(new Date()).format("DD MMMM")}
-              </h4>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">
-            <div className="z-20 p-8 space-y-4">
-              {/* title */}
-              <h3 className="font-medium text-3xl">
-                เพชรฆาตหน้าทารก : Thomas Dwan
-              </h3>
-              {/* posted date */}
-              <h4 className="font-extralight">
-                {moment(new Date()).format("DD MMMM")}
-              </h4>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">
-            <div className="z-20 p-8 space-y-4">
-              {/* title */}
-              <h3 className="font-medium text-3xl">
-                เพชรฆาตหน้าทารก : Thomas Dwan
-              </h3>
-              {/* posted date */}
-              <h4 className="font-extralight">
-                {moment(new Date()).format("DD MMMM")}
-              </h4>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">
-            <div className="z-20 p-8 space-y-4">
-              {/* title */}
-              <h3 className="font-medium text-3xl">
-                เพชรฆาตหน้าทารก : Thomas Dwan
-              </h3>
-              {/* posted date */}
-              <h4 className="font-extralight">
-                {moment(new Date()).format("DD MMMM")}
-              </h4>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
+        {blogPreviews.map((blogPreview) => (
+          <BlogPreview blogPreview={blogPreview} />
+        ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Blogs;
+export default Blogs
