@@ -1,10 +1,10 @@
 import moment from 'moment'
 import Link from 'next/link'
-import { BlogPreviewInterface } from '../../types/interface'
+import { IBlogPreview } from '../../types/interface'
 import BlogPreview from './BlogPreview'
 
 interface Props {
-  blogPreviews: BlogPreviewInterface[]
+  blogPreviews: IBlogPreview[]
 }
 
 const Blogs: React.FC<Props> = ({ blogPreviews }: Props) => {
