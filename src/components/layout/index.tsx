@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from "react";
-import { Navigation } from "./Navigation";
-import { Footer } from "./Footer";
+import React, { PropsWithChildren } from 'react'
+import { Navigation } from './Navigation'
+import { Footer } from './Footer'
 
 const Layout = ({ children }: PropsWithChildren<unknown>) => {
   return (
@@ -9,7 +9,7 @@ const Layout = ({ children }: PropsWithChildren<unknown>) => {
       {children}
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

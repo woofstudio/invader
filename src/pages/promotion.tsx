@@ -1,7 +1,7 @@
-import { NextPage } from "next";
+import { NextPage } from 'next'
 
 const Promotion: NextPage = () => {
-  return <div>Promotion</div>;
-};
+  return <div>Promotion</div>
+}
 
-export default Promotion;
+export default Promotion
