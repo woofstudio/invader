@@ -1,10 +1,10 @@
-import Image from "next/image";
-import HeroImg from "../../../public/img/landing/hero-img.png";
+import Image from 'next/image'
+import HeroImg from '../../../public/img/landing/hero-img.png'
 
-import RegistrationIcon from "../../../public/img/landing/hero-registration-icon.png";
-import PromotionsIcon from "../../../public/img/landing/hero-promotions-icon.png";
-import TechniquesIcon from "../../../public/img/landing/hero-techniques-icon.png";
-import CommunityIcon from "../../../public/img/landing/hero-community-icon.png";
+import RegistrationIcon from '../../../public/img/landing/hero-registration-icon.png'
+import PromotionsIcon from '../../../public/img/landing/hero-promotions-icon.png'
+import TechniquesIcon from '../../../public/img/landing/hero-techniques-icon.png'
+import CommunityIcon from '../../../public/img/landing/hero-community-icon.png'
 
 const Hero: React.FC = () => {
   return (
@@ -28,31 +28,51 @@ const Hero: React.FC = () => {
 
       {/* hero image */}
       <div className="hidden lg:block">
-        <Image src={HeroImg} priority={true} quality={100} />
+        <Image src={HeroImg} alt="hero" priority={true} quality={100} />
       </div>
 
       {/* hero links */}
       <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[420px]">
         <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
-          <Image src={RegistrationIcon} priority={true} quality={100} />
+          <Image
+            src={RegistrationIcon}
+            alt="register"
+            priority={true}
+            quality={100}
+          />
           <h3 className="text-white opacity-50 font-kanit text-xl">
             วิธีการสมัคร
           </h3>
         </div>
         <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
-          <Image src={PromotionsIcon} priority={true} quality={100} />
+          <Image
+            src={PromotionsIcon}
+            alt="promo"
+            priority={true}
+            quality={100}
+          />
           <h3 className="text-white opacity-50 font-kanit text-xl">
             โปรโมชั่นเด็ด
           </h3>
         </div>
         <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
-          <Image src={TechniquesIcon} priority={true} quality={100} />
+          <Image
+            src={TechniquesIcon}
+            alt="tech"
+            priority={true}
+            quality={100}
+          />
           <h3 className="text-white opacity-50 font-kanit text-xl">
             เทคนิคการเล่น
           </h3>
         </div>
         <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
-          <Image src={CommunityIcon} priority={true} quality={100} />
+          <Image
+            src={CommunityIcon}
+            alt="commu"
+            priority={true}
+            quality={100}
+          />
           <h3 className="text-white opacity-50 font-kanit text-xl">
             คอมมูนิตี้
           </h3>
@@ -66,7 +86,7 @@ const Hero: React.FC = () => {
         </span>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

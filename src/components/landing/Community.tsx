@@ -1,7 +1,7 @@
-import Image from "next/image";
-import IvdLogoBlack from "../../../public/ivd-logo-black.svg";
-import Arrow from "../../../public/arrow.svg";
-import CommunityImg from "../../../public/img/landing/community-img.png";
+import Image from 'next/image'
+import IvdLogoBlack from '../../../public/ivd-logo-black.svg'
+import Arrow from '../../../public/arrow.svg'
+import CommunityImg from '../../../public/img/landing/community-img.png'
 
 const Community: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Community: React.FC = () => {
       id="commuinity"
       className="w-full p-32 flex justify-between"
       style={{
-        background: "linear-gradient(155.04deg, #FACB48 3.36%, #FFFFFF 67.79%)",
+        background: 'linear-gradient(155.04deg, #FACB48 3.36%, #FFFFFF 67.79%)',
       }}
     >
       <div className="space-y-10">
@@ -29,13 +29,13 @@ const Community: React.FC = () => {
         </div>
         <div className="space-y-4">
           <a
-            href="/"
+            href="https://line.me/en/"
             className="grid place-content-center rounded-xl uppercase bg-[#48DC69] h-[72px] w-[17rem] text-white font-kanit font-bold text-xl tracking-wider"
           >
             Join LINE Chat
           </a>
           <a
-            href="/"
+            href="https://discord.com/"
             className="grid place-content-center rounded-xl uppercase bg-[#5662DE] h-[72px] w-[17rem] text-white font-kanit font-bold text-xl tracking-wider"
           >
             Join Discord
@@ -43,10 +43,10 @@ const Community: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-col justify-end">
-        <Image src={CommunityImg} priority={true} quality={100} />
+        <Image src={CommunityImg} alt="commu" priority={true} quality={100} />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Community;
+export default Community

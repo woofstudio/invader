@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { ReactNode } from "react";
-import RegistrationImg from "../../../public/img/landing/links-registration-img.png";
+import Image from 'next/image'
+import { ReactNode } from 'react'
+import RegistrationImg from '../../../public/img/landing/links-registration-img.png'
 
-import RegistrationIcon from "../../../public/img/landing/links-registration-icon.png";
-import PromotionsIcon from "../../../public/img/landing/links-promotions-icon.png";
-import TechniquesIcon from "../../../public/img/landing/links-techniques-icon.png";
-import CommunityIcon from "../../../public/img/landing/links-community-icon.png";
+import RegistrationIcon from '../../../public/img/landing/links-registration-icon.png'
+import PromotionsIcon from '../../../public/img/landing/links-promotions-icon.png'
+import TechniquesIcon from '../../../public/img/landing/links-techniques-icon.png'
+import CommunityIcon from '../../../public/img/landing/links-community-icon.png'
 
 const Links: React.FC = () => {
   return (
@@ -19,11 +19,12 @@ const Links: React.FC = () => {
             วิธีการสมัคร
           </h3>
           <div className="w-[40%] mt-[20%]">
-            <Image src={RegistrationIcon} layout="responsive" />
+            <Image src={RegistrationIcon} alt="register" layout="responsive" />
           </div>
           <div className="absolute -bottom-[90%] xl:-bottom-[70%] -right-[21%] aspect-square w-[85%]">
             <Image
               src={RegistrationImg}
+              alt="register"
               className="group-hover:-rotate-12 duration-300"
               layout="responsive"
               quality={100}
@@ -36,7 +37,7 @@ const Links: React.FC = () => {
             โปรโมชั่น
           </h3>
           <div className="w-[40%] mt-[20%]">
-            <Image src={PromotionsIcon} layout="responsive" />
+            <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
           </div>
         </Link>
         <Link>
@@ -44,7 +45,7 @@ const Links: React.FC = () => {
             เทคนิคการเล่น
           </h3>
           <div className="w-[28%] mt-[20%]">
-            <Image src={TechniquesIcon} layout="responsive" />
+            <Image src={TechniquesIcon} alt="tech" layout="responsive" />
           </div>
         </Link>
         <Link>
@@ -52,16 +53,16 @@ const Links: React.FC = () => {
             Community
           </h3>
           <div className="w-[40%] mt-[20%]">
-            <Image src={CommunityIcon} layout="responsive" />
+            <Image src={CommunityIcon} alt="community" layout="responsive" />
           </div>
         </Link>
       </div>
     </section>
-  );
-};
+  )
+}
 
 interface LinkProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Link: React.FC<LinkProps> = ({ children }) => {
@@ -69,7 +70,7 @@ const Link: React.FC<LinkProps> = ({ children }) => {
     <div className="bg-gradient-to-t from-primary-200 to-primary-300 aspect-square rounded-2xl 2xl:rounded-3xl overflow-hidden group relative p-6 2xl:px-10 2xl:py-8">
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Links;
+export default Links
