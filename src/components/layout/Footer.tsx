@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { FiChevronUp } from "react-icons/fi";
-import { ImYoutube } from "react-icons/im";
-import { IoLogoFacebook } from "react-icons/io";
-import IvdLogoColor from "../../../public/ivd-logo-color.svg";
-import IvdLogoName from "../../../public/ivd-logo-name.png";
+import Image from 'next/image'
+import Link from 'next/link'
+import { FiChevronUp } from 'react-icons/fi'
+import { ImYoutube } from 'react-icons/im'
+import { IoLogoFacebook } from 'react-icons/io'
+import IvdLogoColor from '../../../public/ivd-logo-color.svg'
+import IvdLogoName from '../../../public/ivd-logo-name.png'
 
 export const Footer: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
       </a>
 
       {/* mobile links */}
-      <div className="flex flex-col items-center text-white font-kanit text-lg font-medium tracking-wider space-y-6">
+      <div className="2xl:hidden flex flex-col items-center text-white font-kanit text-lg font-medium tracking-wider space-y-6">
         <Link href="/blog">
           <a>บทความ</a>
         </Link>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* mobile copyright */}
-      <div className="text-white opacity-80 tracking-widest font-kanit font-extralight text-center">
+      <div className="2xl:hidden text-white opacity-80 tracking-widest font-kanit font-extralight text-center">
         <span className="opacity-70">
           Copyrights 2019 POKERINVADER.COM
           <br />-<br />
@@ -75,5 +75,5 @@ export const Footer: React.FC = () => {
         </span>
       </div>
     </footer>
-  );
-};
+  )
+}
