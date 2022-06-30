@@ -1,2 +1,2 @@
-export * from "./Appconfig";
-export * from "./Meta";
+export * from './Appconfig'
+export * from './Meta'

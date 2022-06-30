@@ -1,14 +1,14 @@
-import createImageUrlBuilder from "@sanity/image-url";
+import createImageUrlBuilder from '@sanity/image-url'
 import {
   SanityClientLike,
   SanityImageSource,
   SanityProjectDetails,
-} from "@sanity/image-url/lib/types/types";
+} from '@sanity/image-url/lib/types/types'
 import {
   ClientConfig,
   createClient,
   createPreviewSubscriptionHook,
-} from "next-sanity";
+} from 'next-sanity'
 
 const config: ClientConfig = {
   /**
@@ -18,27 +18,27 @@ const config: ClientConfig = {
    *
    * https://nextjs.org/docs/basic-features/environment-variables
    * */
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "id",
-  apiVersion: "2021-08-11", // or today's date for latest
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'id',
+  apiVersion: '2021-08-11', // or today's date for latest
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
    * Authenticated request (like preview) will always bypass the CDN
    * */
-  useCdn: process.env.NODE_ENV === "production",
-};
+  useCdn: process.env.NODE_ENV === 'production',
+}
 
 const extendConfig: SanityClientLike | SanityProjectDetails = {
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "id",
-};
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'id',
+}
 
-const sanityClient = createClient(config);
+const sanityClient = createClient(config)
 
 const urlFor = (source: SanityImageSource) =>
-  createImageUrlBuilder(extendConfig).image(source);
+  createImageUrlBuilder(extendConfig).image(source)
 
-const usePreviewSubscription = createPreviewSubscriptionHook(extendConfig);
+const usePreviewSubscription = createPreviewSubscriptionHook(extendConfig)
 
-export { sanityClient, urlFor, usePreviewSubscription };
+export { sanityClient, urlFor, usePreviewSubscription }

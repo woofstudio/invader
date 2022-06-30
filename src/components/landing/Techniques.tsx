@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Carousel from "nuka-carousel";
+import Link from 'next/link'
+import Carousel from 'nuka-carousel'
 
 const Techniques: React.FC = () => {
   return (
@@ -78,11 +78,11 @@ const Techniques: React.FC = () => {
       <Carousel
         dragThreshold={0.1}
         defaultControlsConfig={{
-          nextButtonClassName: "hidden",
-          prevButtonClassName: "hidden",
-          pagingDotsContainerClassName: "space-x-2",
+          nextButtonClassName: 'hidden',
+          prevButtonClassName: 'hidden',
+          pagingDotsContainerClassName: 'space-x-2',
           pagingDotsStyle: {
-            fill: "#FFBF00",
+            fill: '#FFBF00',
           },
         }}
         autoplay
@@ -132,7 +132,7 @@ const Techniques: React.FC = () => {
         </Link>
       </Carousel>
     </section>
-  );
-};
+  )
+}
 
-export default Techniques;
+export default Techniques
