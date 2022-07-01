@@ -36,7 +36,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="absolute top-0 w-full h-40 px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 flex items-center justify-between z-10">
+      <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-10">
         {pathname === '/' ? (
           <Link href="/">
             <Image src={IvdLogoColor} alt="Invader Logo" />
@@ -66,10 +66,10 @@ export const Navigation: React.FC = () => {
             <Link href="/">
               <a className="link">เทคนิคการเล่น</a>
             </Link>
-            <Link href="/">
+            <Link href="/article">
               <a className="link">บทความโป๊กเกอร์</a>
             </Link>
-            <Link href="/">
+            <Link href="/promotion">
               <a className="link">โปรโมชั่น</a>
             </Link>
           </div>
