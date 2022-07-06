@@ -5,6 +5,7 @@ import { FiMenu } from 'react-icons/fi'
 import { BsChevronLeft, BsXLg } from 'react-icons/bs'
 import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import { useRouter } from 'next/router'
+import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
 export const Navigation: React.FC = () => {
   const [show, setShow] = useState(false)
@@ -90,10 +91,10 @@ export const Navigation: React.FC = () => {
           </div>
           <hr className="text-text-300" />
           <div className="flex flex-col">
-            <a href="https://www.facebook.com/" className="link">
+            <a href={FACEBOOK_PAGE} className="link">
               FACEBOOK
             </a>
-            <a href="https://www.youtube.com/" className="link">
+            <a href={YOUTUBE_CHANNEL} className="link">
               YOUTUBE
             </a>
           </div>
