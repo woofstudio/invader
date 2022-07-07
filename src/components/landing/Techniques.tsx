@@ -18,7 +18,7 @@ const Techniques: React.FC = () => {
 
       {/* desktop links */}
       <div className="hidden lg:grid grid-cols-4 gap-6">
-        <Link href="/">
+        <Link href="/newbie">
           <div className="bg-[url('/img/landing/techniques-newbie-img.png')] bg-cover aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <h3 className="uppercase font-druk text-primary-100 lg:text-3xl xl:text-4xl 2xl:text-5xl mt-12">
               Newbie
