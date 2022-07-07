@@ -25,8 +25,8 @@ const Blogs: React.FC<Props> = ({ blogPreviews }: Props) => {
         </Link>
       </div>
       <div className="grid grid-cols-2 w-[65%] gap-6">
-        {blogPreviews.map((blogPreview, index) => (
-          <BlogPreview key={index} blogPreview={blogPreview} />
+        {blogPreviews.map((blogPreview, idx) => (
+          <BlogPreview blogPreview={blogPreview} key={idx} />
         ))}
       </div>
     </section>
