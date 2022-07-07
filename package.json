@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@sanity/image-url": "^1.0.1",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "moment": "^2.29.3",
     "next": "latest",
