@@ -1,10 +1,10 @@
 import moment from 'moment'
 import Link from 'next/link'
 import { urlFor } from '../../sanity'
-import { BlogPreviewInterface } from '../../types/interface'
+import { IBlogPreview } from '../../types/interface'
 
 interface Props {
-  blogPreview: BlogPreviewInterface
+  blogPreview: IBlogPreview
 }
 
 //display image urlFor(blogPreview.previewImage).url()

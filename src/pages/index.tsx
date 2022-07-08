@@ -8,10 +8,10 @@ import Blogs from '../components/landing/Blogs'
 import About from '../components/landing/About'
 import Community from '../components/landing/Community'
 import { sanityClient } from '../sanity'
-import { BlogPreviewInterface } from '../types/interface'
+import { IBlogPreview } from '../types/interface'
 
 interface Props {
-  blogPreviews: BlogPreviewInterface[]
+  blogPreviews: IBlogPreview[]
 }
 
 const Home: NextPage<Props> = ({ blogPreviews }: Props) => {
