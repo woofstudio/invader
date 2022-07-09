@@ -1,10 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import PortableText from 'react-portable-text'
 import { sanityClient, urlFor } from '../../sanity'
-import { BlogInterface, BlogPreviewInterface } from '../../types/interface'
+import { IBlog, IBlogPreview } from '../../types/interface'
 interface Props {
-  blog: BlogInterface
-  blogPreviews: BlogPreviewInterface
+  blog: IBlog
+  blogPreviews: IBlogPreview
 }
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
   return (

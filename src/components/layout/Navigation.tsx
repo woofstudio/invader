@@ -5,6 +5,7 @@ import { FiMenu } from 'react-icons/fi'
 import { BsChevronLeft, BsXLg } from 'react-icons/bs'
 import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import { useRouter } from 'next/router'
+import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
 export const Navigation: React.FC = () => {
   const [show, setShow] = useState(false)
@@ -36,7 +37,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="absolute top-0 w-full h-40 px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 flex items-center justify-between z-10">
+      <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-10">
         {pathname === '/' ? (
           <Link href="/">
             <Image src={IvdLogoColor} alt="Invader Logo" />
@@ -66,10 +67,10 @@ export const Navigation: React.FC = () => {
             <Link href="/">
               <a className="link">เทคนิคการเล่น</a>
             </Link>
-            <Link href="/">
+            <Link href="/article">
               <a className="link">บทความโป๊กเกอร์</a>
             </Link>
-            <Link href="/">
+            <Link href="/promotion">
               <a className="link">โปรโมชั่น</a>
             </Link>
           </div>
@@ -90,10 +91,10 @@ export const Navigation: React.FC = () => {
           </div>
           <hr className="text-text-300" />
           <div className="flex flex-col">
-            <a href="https://www.facebook.com/" className="link">
+            <a href={FACEBOOK_PAGE} className="link">
               FACEBOOK
             </a>
-            <a href="https://www.youtube.com/" className="link">
+            <a href={YOUTUBE_CHANNEL} className="link">
               YOUTUBE
             </a>
           </div>
