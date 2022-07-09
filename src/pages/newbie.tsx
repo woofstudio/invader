@@ -1,11 +1,15 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
+import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques/Layout'
 
 const Newbie: NextPage = () => {
   return (
     <Layout>
-      <div>article</div>
+      <ArticleLink title="กฎและกติกาการเล่น" />
+      <ArticleLink title="กฎและกติกาการเล่น" />
+      <ArticleLink title="กฎและกติกาการเล่น" />
+      <ArticleLink title="กฎและกติกาการเล่น" />
     </Layout>
   )
 }

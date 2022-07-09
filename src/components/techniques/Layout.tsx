@@ -125,7 +125,11 @@ const Layout: React.FC<Props> = ({ children }) => {
               })}
             </h2>
           </div>
-          {children}
+          <div className="max-w-screen-2xl mx-auto">
+            <div className="grid grid-cols-2 xl:grid-cols-3 gap-10 p-16 2xl:p-20">
+              {children}
+            </div>
+          </div>
         </div>
       </div>
     </div>
