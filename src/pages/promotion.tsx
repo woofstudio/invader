@@ -145,6 +145,7 @@ const Promotion: NextPage<Props> = ({
           )
         })}
       </div>
+
       <Header
         imageURL={urlFor(monthlyPromotion.monthlyImage).url()}
         title={mapMonth[monthlyPromotion.month]}

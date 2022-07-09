@@ -8,11 +8,16 @@ import {
   LatestArticles,
 } from '../../components/article'
 import { sanityClient } from '../../sanity'
+import { IBlogPreview } from '../../types/interface'
 
-const Articles: NextPage = () => {
+interface Props {
+  editorPreviews: IBlogPreview[]
+}
+
+const Articles: NextPage<Props> = ({ editorPreviews }: Props) => {
   return (
     <div>
-      <EditorPick />
+      <EditorPick editorPreviews={editorPreviews} />
       <LatestArticles />
       <Catagories />
       <FanPage />
@@ -22,14 +27,17 @@ const Articles: NextPage = () => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const queryEditorPreviews = `*[_type == "post" && *[_type=="category" && title == "EDITORS" ][0]._id in categories[]._ref]{
+  const queryEditorPreviews = `*[_type == "post" && *[_type=="category" && title == "EDITOR" ][0]._id in categories[]._ref ] | order(publishedAt desc){
         title,
         "slug": slug.current,
         "previewImage":previewImage.asset._ref,
-        publishedAt
+        publishedAt,
+        categories[] -> {
+          title
+        }
 }`
   const editorPreviews = await sanityClient.fetch(queryEditorPreviews)
-  // console.log(blogPreviews)
+  // console.log(editorPreviews)
   return {
     props: {
       editorPreviews,

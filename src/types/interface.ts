@@ -3,6 +3,7 @@ export interface IBlogPreview {
   slug: string
   previewImage: string
   publishedAt: string
+  categories: { title: string }[]
 }
 
 export interface IBlog {

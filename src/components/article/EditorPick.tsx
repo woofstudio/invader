@@ -1,10 +1,20 @@
+import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
 import Carousel from 'nuka-carousel'
 import React from 'react'
 import { TbClock } from 'react-icons/tb'
+import { urlFor } from '../../sanity'
+import { IBlogPreview } from '../../types/interface'
 
-export const EditorPick = () => {
+interface Props {
+  editorPreviews: IBlogPreview[]
+}
+export const EditorPick = ({ editorPreviews }: Props) => {
+  const highlight = editorPreviews[0]
+  // editorPreviews.shift()
+  console.log(highlight)
+
   return (
     <section
       id="editor pick"
@@ -26,22 +36,34 @@ export const EditorPick = () => {
                   'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
               }}
             />
-            <Image src="/mock.jpeg" alt="mock image" layout="fill" />
+            <Image
+              src={urlFor(highlight.previewImage).url()}
+              alt={highlight.title}
+              layout="fill"
+            />
             <div className="absolute w-80 hidden md:block p-5 left-0 z-20 bottom-0">
-              <p className="text-xl font-semibold">
-                เลิกเถียงกันสรุปจบในโพสเดียว โป๊กเกอร์ เกมกีฬา หรือ การพนัน?
-              </p>
+              <p className="text-xl font-semibold">{highlight.title}</p>
               <div className="flex items-center space-x-2">
                 <TbClock />
-                <p className="text-base font-light">20 May 2022</p>
+                <p className="text-base font-light">
+                  {moment(new Date(highlight.publishedAt)).format(
+                    'DD MMMM YYYY',
+                  )}
+                </p>
               </div>
             </div>
           </div>
           <div className="block md:hidden space-y-5 mt-5 mb-8">
-            <h4 className="text-xl font-semibold">
-              เลิกเถียงกันสรุปจบในโพสเดียว โป๊กเกอร์ เกมกีฬา หรือ การพนัน?
-            </h4>
-            <p className="tag">สาระ Poker</p>
+            <h4 className="text-xl font-semibold">{highlight.title}</h4>
+            <div className="flex gap-2">
+              {highlight.categories.map((category) => {
+                if (category.title !== 'EDITOR') {
+                  return <p className="tag">{category.title}</p>
+                }
+              })}
+            </div>
+
+            {/* need description */}
             <p className="text-sm font-light line-clamp-3">
               โป๊กเกอร์นับเป็นกีฬาได้ยังไง?ในเมื่อไม่เห็นมีการออกแรงอะไรเลย
               ดูยังไงก็ไม่เหมือนพวกฟุตบอลหรือบาสเก็ตบอลเลยสักนิด
@@ -49,30 +71,36 @@ export const EditorPick = () => {
             </p>
           </div>
           <div className="flex cursor-pointer underline justify-end md:hidden">
-            <Link href="/">
+            <Link href={`/article/${highlight.slug}`}>
               <a>{'READ MORE >'}</a>
             </Link>
           </div>
         </div>
         <div className="flex-1 space-y-6 hidden md:block">
-          {[1, 2, 3].map((elem) => (
-            <div className="flex space-x-5" key={elem}>
+          {editorPreviews.slice(1).map((elem, index) => (
+            <div className="flex space-x-5" key={index}>
               <div className="w-48 h-32 relative rounded-xl overflow-hidden">
-                <Image src="/mock.jpeg" alt="mock image" layout="fill" />
+                <Image
+                  src={urlFor(elem.previewImage).url()}
+                  alt={elem.title}
+                  layout="fill"
+                />
               </div>
               <div className="space-y-2 w-72">
                 <p className="text-xl font-semibold line-clamp-3">
-                  GGPoker กับ Natural8 แตกต่างกันอย่างไร!?
+                  {elem.title}
                 </p>
-                <p className="text-sm font-light">1 Jun, 2022</p>
+                <p className="text-sm font-light">
+                  {moment(new Date(elem.publishedAt)).format('DD MMMM YYYY')}
+                </p>
               </div>
             </div>
           ))}
         </div>
         <div className="block md:hidden">
           <Carousel>
-            {[1, 2, 3].map((elem) => (
-              <div key={elem} className="relative w-full h-screen">
+            {editorPreviews.slice(1).map((elem, index) => (
+              <div key={index} className="relative w-full h-screen">
                 <div
                   className="w-full absolute h-full z-10"
                   style={{
@@ -80,12 +108,18 @@ export const EditorPick = () => {
                       'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
                   }}
                 />
-                <Image src="/mock.jpeg" alt="mock image" layout="fill" />
+                <Image
+                  src={urlFor(elem.previewImage).url()}
+                  alt={elem.title}
+                  layout="fill"
+                />
                 <div className="absolute w-80 left-8 px-4 bottom-20 border-l-4 z-20 border-primary-200">
                   <p className="text-base font-druk font-semibold text-primary-200">
-                    Liv Boeree
+                    {elem.title}
                   </p>
-                  <p className="text-base italic">Iron Maiden</p>
+                  <p className="text-base italic">
+                    {moment(new Date(elem.publishedAt)).format('DD MMMM YYYY')}
+                  </p>
                 </div>
               </div>
             ))}
