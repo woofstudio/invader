@@ -234,7 +234,7 @@ const Promotion: NextPage<Props> = ({
         {monthPromotion.promotions &&
           monthPromotion.promotions.map((promotion: IPromotion) => (
             <PromotionCard
-              key={promotion}
+              key={promotion.title}
               promotion={promotion}
               month={monthPromotion.month}
             />
