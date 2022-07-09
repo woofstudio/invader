@@ -1,8 +1,7 @@
 import { NextPage } from 'next'
-import Link from 'next/link'
 import Layout from '../components/techniques/Layout'
 
-const Newbie: NextPage = () => {
+const HowTo: NextPage = () => {
   return (
     <Layout>
       <div>article</div>
@@ -10,4 +9,4 @@ const Newbie: NextPage = () => {
   )
 }
 
-export default Newbie
+export default HowTo
