@@ -65,7 +65,6 @@ const Promotion: NextPage<Props> = ({
     month: number
     year: number
   }) => {
-    console.log(month, year)
     const { monthlyPromotion, preMonthlyPromotions } = await queryPromotion(
       month,
       year,
@@ -75,7 +74,6 @@ const Promotion: NextPage<Props> = ({
     setPreMonthPrmotion(preMonthlyPromotions)
 
     const date = new Date()
-    console.log(monthPromotion.month)
 
     const nextMonths = []
     if (monthlyPromotion.year !== date.getFullYear()) {
@@ -97,7 +95,6 @@ const Promotion: NextPage<Props> = ({
         })
       }
     }
-    console.log(nextMonths)
     setNextMonthPrmotion(nextMonths)
   }
 
@@ -112,6 +109,7 @@ const Promotion: NextPage<Props> = ({
         {preMonthPrmotion.map((preMonth, index) => {
           return (
             <button
+              key={index}
               className="py-4 px-4 cursor-pointer text-black/75"
               onClick={() => {
                 handleChangeMonth(preMonth)
@@ -132,6 +130,7 @@ const Promotion: NextPage<Props> = ({
         {nextMonthPrmotion.map((nextMonth, index) => {
           return (
             <button
+              key={index}
               className="py-4 px-4 cursor-pointer text-black/75"
               onClick={() => {
                 handleChangeMonth(nextMonth)
@@ -162,7 +161,10 @@ const Promotion: NextPage<Props> = ({
           >
             {preMonthPrmotion.map((preMonth, index) => {
               return (
-                <li className="bg-gray-200 hover:text-dark-100 py-4 px-4 cursor-pointer text-dark-100/40 font-kanit">
+                <li
+                  key={index}
+                  className="bg-gray-200 hover:text-dark-100 py-4 px-4 cursor-pointer text-dark-100/40 font-kanit"
+                >
                   <button
                     onClick={() => {
                       handleChangeMonth(preMonth)
@@ -187,6 +189,7 @@ const Promotion: NextPage<Props> = ({
         <div>
           <h1 className="text-4xl">{mapMonth[monthPromotion.month]}</h1>
         </div>
+
         <div className="group relative text-sm hidden md:block">
           <button className="py-4 px-6 text-text-100/50 rounded inline-flex items-center group">
             <span className="">{'Next Month >'}</span>
@@ -198,7 +201,10 @@ const Promotion: NextPage<Props> = ({
           >
             {nextMonthPrmotion.map((nextMonth, index) => {
               return (
-                <li className="bg-gray-200 hover:text-dark-100 py-4 px-4 cursor-pointer text-dark-100/40 font-kanit">
+                <li
+                  key={index}
+                  className="bg-gray-200 hover:text-dark-100 py-4 px-4 cursor-pointer text-dark-100/40 font-kanit"
+                >
                   <button
                     onClick={() => {
                       handleChangeMonth(nextMonth)
@@ -226,14 +232,13 @@ const Promotion: NextPage<Props> = ({
       <Hr />
       <div className="grid justify-center my-24 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 mx-8 sm:mx-10 md:mx-14 lg:mx-20 xl:mx-24 2xl:mx-32">
         {monthPromotion.promotions &&
-          monthPromotion.promotions.map((promotion: IPromotion) => {
-            return (
-              <PromotionCard
-                promotion={promotion}
-                month={monthPromotion.month}
-              />
-            )
-          })}
+          monthPromotion.promotions.map((promotion: IPromotion) => (
+            <PromotionCard
+              key={promotion}
+              promotion={promotion}
+              month={monthPromotion.month}
+            />
+          ))}
       </div>
     </div>
   )
