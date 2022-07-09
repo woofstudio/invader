@@ -1,8 +1,9 @@
 import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Carousel from 'nuka-carousel'
-import React from 'react'
+import React, { useState } from 'react'
 import { TbClock } from 'react-icons/tb'
 import { urlFor } from '../../sanity'
 import { IBlogPreview } from '../../types/interface'
@@ -11,9 +12,8 @@ interface Props {
   editorPreviews: IBlogPreview[]
 }
 export const EditorPick = ({ editorPreviews }: Props) => {
-  const highlight = editorPreviews[0]
-  // editorPreviews.shift()
-  console.log(highlight)
+  const [highlight] = useState<IBlogPreview>(editorPreviews[0])
+  const router = useRouter()
 
   return (
     <section
@@ -28,7 +28,12 @@ export const EditorPick = ({ editorPreviews }: Props) => {
           <h1 className="text-primary-200 my-5 underline md:hidden block text-lg font-bold font-druk">
             {"EDITOR'S PICK"}
           </h1>
-          <div className="w-full md:w-[680px] h-60 md:h-[430px] relative">
+          <div
+            className="w-full md:w-[680px] h-60 md:h-[430px] relative"
+            onClick={() => {
+              router.push(`article/${highlight.slug}`)
+            }}
+          >
             <div
               className="w-full hidden md:block absolute h-full z-10"
               style={{
@@ -78,7 +83,13 @@ export const EditorPick = ({ editorPreviews }: Props) => {
         </div>
         <div className="flex-1 space-y-6 hidden md:block">
           {editorPreviews.slice(1).map((elem, index) => (
-            <div className="flex space-x-5" key={index}>
+            <div
+              className="flex space-x-5"
+              key={index}
+              onClick={() => {
+                router.push(`article/${elem.slug}`)
+              }}
+            >
               <div className="w-48 h-32 relative rounded-xl overflow-hidden">
                 <Image
                   src={urlFor(elem.previewImage).url()}
@@ -100,7 +111,13 @@ export const EditorPick = ({ editorPreviews }: Props) => {
         <div className="block md:hidden">
           <Carousel>
             {editorPreviews.slice(1).map((elem, index) => (
-              <div key={index} className="relative w-full h-screen">
+              <div
+                key={index}
+                className="relative w-full h-screen"
+                onClick={() => {
+                  router.push(`article/${elem.slug}`)
+                }}
+              >
                 <div
                   className="w-full absolute h-full z-10"
                   style={{

@@ -2,10 +2,23 @@ import React, { useState } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { IBlogPreview } from '../../types/interface'
+import { useRouter } from 'next/router'
+import { urlFor } from '../../sanity'
+import moment from 'moment'
 
 const TABS = ['สาระ Poker', 'จิตวิทยา', 'NEWS', 'ประวัติ Pro Players']
-export const Catagories = () => {
+
+interface Props {
+  categoryPreviews: IBlogPreview[]
+  queryCategory: (category: string) => Promise<IBlogPreview[]>
+}
+export const Catagories = ({ categoryPreviews, queryCategory }: Props) => {
   const [catagory, setcatagory] = useState(0)
+  const [categoryCards, setCategoryCards] =
+    useState<IBlogPreview[]>(categoryPreviews)
+  const router = useRouter()
+
   return (
     <section
       id="catogories"
@@ -29,8 +42,10 @@ export const Catagories = () => {
                   catagory === index &&
                   'text-black bg-primary-200 sm:text-primary-200 sm:bg-transparent border-0'
                 }`}
-                onClick={() => {
+                onClick={async () => {
                   setcatagory(index)
+                  const response = await queryCategory(elem)
+                  setCategoryCards(response)
                 }}
               >
                 {elem}
@@ -38,18 +53,38 @@ export const Catagories = () => {
             ))}
           </div>
           <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
-            {[1, 2, 3, 4, 5, 6].map((elem) => (
-              <div key={elem} className="space-y-2">
+            {categoryCards.map((elem, index) => (
+              <div
+                key={index}
+                className="space-y-2 hover:cursor-pointer"
+                onClick={() => {
+                  router.push(`article/${elem.slug}`)
+                }}
+              >
                 <div className="w-full h-60 sm:w-72 sm:h-44 relative rounded-xl overflow-hidden">
-                  <Image src="/mock.jpeg" alt="mock image" layout="fill" />
+                  <Image
+                    src={urlFor(elem.previewImage).url()}
+                    alt={elem.title}
+                    layout="fill"
+                  />
                 </div>
                 <div className="space-y-2 sm:w-72 w-full">
                   <p className="text-xl font-semibold line-clamp-2">
-                    GGPoker กับ Natural8 แตกต่างกันอย่างไร!?
+                    {elem.title}
                   </p>
                   <div className="flex justify-between items-center">
-                    <p className="tag block sm:hidden">สาระ Poker</p>
-                    <p className="text-xs sm:text-sm font-light">1 Jun, 2022</p>
+                    <p className="text-xs sm:text-sm font-light">
+                      {moment(new Date(elem.publishedAt)).format(
+                        'DD MMMM YYYY',
+                      )}
+                    </p>
+                    <div className="flex gap-2">
+                      {elem.categories.map((category) => {
+                        if (category.title !== 'EDITOR') {
+                          return <p className="tag">{category.title}</p>
+                        }
+                      })}
+                    </div>
                   </div>
                 </div>
               </div>

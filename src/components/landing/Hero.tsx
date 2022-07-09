@@ -10,7 +10,6 @@ import Link from 'next/link'
 
 const Hero: React.FC = () => {
   const [hover, setHover] = useState(false)
-  console.log(hover)
 
   return (
     <section
