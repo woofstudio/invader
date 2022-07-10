@@ -145,10 +145,12 @@ const Promotion: NextPage<Props> = ({
         })}
       </div>
 
-      <Header
-        imageURL={urlFor(monthlyPromotion.monthlyImage).url()}
-        title={mapMonth[monthlyPromotion.month]}
-      />
+      <div className="mb-20">
+        <Header
+          imageURL={urlFor(monthlyPromotion.monthlyImage).url()}
+          title={mapMonth[monthlyPromotion.month]}
+        />
+      </div>
       <div className="flex justify-between items-center mx-8 sm:mx-10 md:mx-14 lg:mx-20 xl:mx-24 2xl:mx-32">
         <div className="group relative text-sm hidden md:block">
           <button className="py-4 px-6 text-text-100/50 rounded inline-flex items-center group">
