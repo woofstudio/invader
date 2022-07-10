@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Link from 'next/link'
 import ArticleLink from '../components/techniques/ArticleLink'
-import Layout from '../components/techniques/Layout'
+import Layout from '../components/techniques'
 
 const Newbie: NextPage = () => {
   return (

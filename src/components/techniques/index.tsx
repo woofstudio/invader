@@ -1,10 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-interface Props {
-  children: React.ReactNode
-}
-
 const TechniquesData = [
   {
     path: '/newbie',
@@ -78,7 +74,7 @@ const TechniquesData = [
   },
 ]
 
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter()
   return (
     <div className="min-h-screen relative mt-40 overflow-hidden rounded-xl bg-dark-500 mx-8 sm:mx-10 md:mx-14 lg:mx-20 xl:mx-24 2xl:mx-32 mb-20">

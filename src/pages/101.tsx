@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import ArticleLink from '../components/techniques/ArticleLink'
-import Layout from '../components/techniques/Layout'
+import Layout from '../components/techniques'
 
 const HowTo: NextPage = () => {
   return (
