@@ -6,10 +6,11 @@ import { sanityClient, urlFor } from '../../sanity'
 import { IBlog, IBlogPreview } from '../../types/interface'
 import { BsClock } from 'react-icons/bs'
 import moment from 'moment'
+import Link from 'next/link'
 
 interface Props {
   blog: IBlog
-  blogPreviews: IBlogPreview
+  blogPreviews: IBlogPreview[]
 }
 
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
@@ -105,8 +106,39 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
         </div>
       </div>
 
-      <div className="max-width h-60 bg-gradient-to-b from-[#FACB48]/[.25] to-[#FACB48]/[.0] md:from-[#FACB48] md:to-[#facbb4]/[.0]">
-        <h2 className="font-bold">MORE FROM INVADER</h2>
+      <div className="bg-gradient-to-b from-[#FACB48]/[.25] to-[#FACB48]/[.0] md:from-[#FACB48] md:to-[#ffffff]">
+        <div className="max-width py-16 md:py-40 px-12 space-y-12">
+          <h2 className="font-bold md:text-black md:text-[55px] md:mx-auto md:text-center w-fit max-w-[600px] border-b-2 border-primary-200 md:border-0 font-druk">
+            MORE FROM INVADER
+          </h2>
+          <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8">
+            {blogPreviews.map((elem, index) => (
+              <div key={index} className="space-y-3 md:w-72">
+                <div className="hidden md:block">
+                  <Image
+                    src={urlFor(elem.previewImage).url()}
+                    alt={elem.title}
+                    width={285}
+                    height={196}
+                  />
+                </div>
+                <div className="flex space-x-4 md:flex-col md:space-x-0 items-center md:items-start">
+                  <div className="w-2 h-2 rounded-full bg-primary-200 md:hidden" />
+                  <p className="text-black hidden md:block text-xs">
+                    {moment(new Date(elem.publishedAt)).format('DD MMMM')}
+                  </p>
+                  <p className="md:text-black md:font-bold">{elem.title}</p>
+                </div>
+                <hr className="border-text-100 md:hidden" />
+              </div>
+            ))}
+          </div>
+          <div className="flex cursor-pointer mb-10 underline justify-end md:hidden">
+            <Link href="/article">
+              <a>{'READ MORE >'}</a>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   )
