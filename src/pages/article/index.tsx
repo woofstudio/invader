@@ -36,7 +36,7 @@ const Articles: NextPage<Props> = ({
   return (
     <div>
       <EditorPick editorPreviews={editorPreviews} />
-      <LatestArticles />
+      {/* <LatestArticles /> */}
       <Catagories
         categoryPreviews={categoryPreviews}
         queryCategory={queryCategory}

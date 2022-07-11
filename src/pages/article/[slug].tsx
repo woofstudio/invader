@@ -14,13 +14,7 @@ interface Props {
 }
 
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
-  console.log(blog)
-  console.log('pp', blogPreviews)
   return (
-    // mainImage
-    // category
-    // date
-    // title
     <div>
       <div className="hidden md:block">
         <Header imageURL={urlFor(blog.mainImage).url()} title={blog.title} />
@@ -51,11 +45,15 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
       <div className="bg-dark-200 py-12 max-width">
         <div className="w-[832px] mx-auto space-y-10">
           <div className="flex space-x-4">
-            {blog.categories.map((elem, index) => (
-              <div key={index} className="tag-no-color">
-                {elem.title}
-              </div>
-            ))}
+            {blog.categories.map((elem, index) => {
+              if (elem.title !== 'EDITOR') {
+                return (
+                  <div key={index} className="tag-no-color">
+                    {elem.title}
+                  </div>
+                )
+              }
+            })}
           </div>
           <div className="space-y-2">
             <div className="flex items-center space-x-4">
@@ -91,12 +89,12 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
               ),
 
               link: (props: any) => <a className="text-2xl" {...props} />,
-              img: (props: any) => (
+              image: (props: any) => (
                 <div className="relative w-full hidden">
                   <Image
                     className="lazy img-responsive"
-                    src={urlFor(props.node.asset._ref).url()}
-                    alt={props.node.asset._ref}
+                    src={urlFor(props.asset._ref).url()}
+                    alt={props.asset._ref}
                     layout="fill"
                   />
                 </div>
