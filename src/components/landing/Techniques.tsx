@@ -18,7 +18,7 @@ const Techniques: React.FC = () => {
 
       {/* desktop links */}
       <div className="hidden lg:grid grid-cols-4 gap-6">
-        <Link href="/">
+        <Link href="/newbie">
           <div className="bg-[url('/img/landing/techniques-newbie-img.png')] bg-cover aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <h3 className="uppercase font-druk text-primary-100 lg:text-3xl xl:text-4xl 2xl:text-5xl mt-12">
               Newbie
@@ -31,7 +31,7 @@ const Techniques: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/cash-game">
           <div className="bg-[url('/img/landing/techniques-cash-img.png')] bg-cover aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <h3 className="uppercase font-druk text-primary-100 lg:text-4xl xl:text-5xl 2xl:text-6xl mt-12">
               Cash
@@ -44,7 +44,7 @@ const Techniques: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/tournament">
           <div className="bg-[url('/img/landing/techniques-tournament-img.png')] bg-cover aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <h3 className="uppercase font-druk text-primary-100 lg:text-5xl 2xl:text-6xl mt-12">
               MTT
@@ -59,7 +59,7 @@ const Techniques: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-400 to-[rgba(37, 37, 37, 0)]"></div>
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/101">
           <div className="bg-[url('/img/landing/techniques-101-img.png')] bg-cover aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <h3 className="uppercase font-druk text-primary-100 lg:text-2xl xl:text-4xl 2xl:text-5xl mt-12">
               Invader

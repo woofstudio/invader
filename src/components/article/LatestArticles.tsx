@@ -27,7 +27,7 @@ export const LatestArticles = () => {
         ))}
       </div>
       <div className="flex cursor-pointer mb-10 underline justify-end md:hidden">
-        <Link href="/">
+        <Link href="/article">
           <a>{'READ MORE >'}</a>
         </Link>
       </div>

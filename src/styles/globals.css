@@ -27,6 +27,9 @@
   .tag {
     @apply bg-primary-100 w-fit text-black text-xs px-2 py-1;
   }
+  .tag-no-color {
+    @apply px-8 py-2 bg-dark-400 rounded-xl text-gray-500;
+  }
   .max-width {
     @apply max-w-screen-2xl mx-auto;
   }

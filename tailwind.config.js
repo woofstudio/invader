@@ -24,6 +24,7 @@ module.exports = {
           200: '#161616',
           300: '#1C1C1C',
           400: '#252525',
+          500: '#3E3E3E',
           900: 'rgba(0, 0, 0, 0.74)',
         },
         text: {
@@ -36,6 +37,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
-    require('@tailwindcss/aspect-ratio'),
+    // require('@tailwindcss/aspect-ratio'),
   ],
 }
