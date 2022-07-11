@@ -2,6 +2,7 @@ import moment from 'moment'
 import Link from 'next/link'
 import { urlFor } from '../../sanity'
 import { IBlogPreview } from '../../types/interface'
+import Image from 'next/image'
 
 interface Props {
   blogPreview: IBlogPreview
@@ -12,6 +13,11 @@ const BlogPreview: React.FC<Props> = ({ blogPreview }: Props) => {
   return (
     <Link href={`article/${blogPreview.slug}`}>
       <div className="aspect-[7/4] rounded-2xl relative overflow-hidden text-white font-kanit flex flex-col justify-end duration-500 hover:-translate-y-4 cursor-pointer">
+        <Image
+          src={urlFor(blogPreview.previewImage).url()}
+          alt={blogPreview.title}
+          layout="fill"
+        />
         <div className="z-20 p-8 space-y-4">
           {/* title */}
           <h3 className="font-medium text-3xl">{blogPreview.title}</h3>

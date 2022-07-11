@@ -8,6 +8,7 @@ export interface IBlogPreview {
 
 export interface IBlog {
   title: string
+  description: string
   publishedAt: string
   slug: string
   mainImage: string

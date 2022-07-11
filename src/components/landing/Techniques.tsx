@@ -9,7 +9,7 @@ const Techniques: React.FC = () => {
     >
       <div className="font-kanit text-white space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
         <h2 className="font-medium text-4xl sm:text-5xl lg:text-6xl">
-          เทคนิคการเล่น
+          เทคนิคการเล่นโป๊กเกอร์
         </h2>
         <h3 className="font-light text-base sm:text-lg tracking-wide max-w-[13rem] sm:max-w-none opacity-50 lg:opacity-100">
           วิธีทำเงิน และเทคนิคการเล่นดีๆจากโปรเพลย์เยอร์ รวมไว้ที่นี่

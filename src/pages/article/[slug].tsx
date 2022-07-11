@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import { Meta } from '../../config'
 import Image from 'next/image'
 import PortableText from 'react-portable-text'
 import Header from '../../components/layout/Header'
@@ -16,6 +17,7 @@ interface Props {
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
   return (
     <div>
+      <Meta title={blog.title} description={blog.description} />
       <div className="hidden md:block">
         <Header imageURL={urlFor(blog.mainImage).url()} title={blog.title} />
       </div>
@@ -164,6 +166,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const queryBlog = `*[_type == "post" && slug.current == "${params?.slug}"][0]{
     publishedAt,
     title,
+    description,
     "slug": slug.current,
     "mainImage":mainImage.asset._ref,
     categories[] -> {

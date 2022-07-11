@@ -2,6 +2,7 @@ import Image from 'next/image'
 import IvdLogoBlack from '../../../public/ivd-logo-black.svg'
 import Arrow from '../../../public/arrow.svg'
 import CommunityImg from '../../../public/img/landing/community-img.png'
+import { DISCORD, LINE } from '../../config'
 
 const Community: React.FC = () => {
   return (
@@ -29,13 +30,13 @@ const Community: React.FC = () => {
         </div>
         <div className="space-y-4">
           <a
-            href="https://line.me/en/"
+            href={LINE}
             className="grid place-content-center rounded-xl uppercase bg-[#48DC69] h-[72px] w-[17rem] text-white font-kanit font-bold text-xl tracking-wider"
           >
             Join LINE Chat
           </a>
           <a
-            href="https://discord.com/"
+            href={DISCORD}
             className="grid place-content-center rounded-xl uppercase bg-[#5662DE] h-[72px] w-[17rem] text-white font-kanit font-bold text-xl tracking-wider"
           >
             Join Discord

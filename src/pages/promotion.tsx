@@ -11,6 +11,7 @@ import {
 import Image from 'next/image'
 import Header from '../components/layout/Header'
 import Hr from '../components/landing/Hr'
+import { Meta, metaConfig } from '../config'
 
 const queryPromotion = async (month: number, year: number) => {
   const queryMonthlyPromotion = `*[_type == "monthlyPromotion" && ${month} == month && ${year} == year][0] {
@@ -100,6 +101,10 @@ const Promotion: NextPage<Props> = ({
 
   return (
     <div className="text-text-100 font-druk">
+      <Meta
+        title={metaConfig.promotion.title}
+        description={metaConfig.promotion.description}
+      />
       <div
         className={`z-50 fixed top-0 w-full h-screen bg-text-100 ${
           isPreMonth ? 'block' : 'hidden'

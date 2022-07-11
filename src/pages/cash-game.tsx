@@ -1,16 +1,37 @@
-import { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques'
+import { Meta, metaConfig } from '../config'
+import { queryCategory } from '../util'
+import { IBlogPreview } from '../types/interface'
 
-const Cashgame: NextPage = () => {
+interface Props {
+  cashgamePreviews: IBlogPreview[]
+}
+const Cashgame: NextPage<Props> = ({ cashgamePreviews }: Props) => {
   return (
     <Layout>
-      <ArticleLink title="กฎและกติกาการเล่น" />
-      <ArticleLink title="กฎและกติกาการเล่น" />
-      <ArticleLink title="กฎและกติกาการเล่น" />
-      <ArticleLink title="กฎและกติกาการเล่น" />
+      <Meta
+        title={metaConfig.technique.cashgame.title}
+        description={metaConfig.technique.cashgame.description}
+      />
+      <div>
+        {cashgamePreviews.map((cashgamePreview, index) => (
+          <ArticleLink key={index} article={cashgamePreview} />
+        ))}
+      </div>
     </Layout>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const cashgamePreviews = await queryCategory('CASH GAME')
+  return {
+    props: {
+      cashgamePreviews,
+    },
+    revalidate: 60,
+  }
 }
 
 export default Cashgame

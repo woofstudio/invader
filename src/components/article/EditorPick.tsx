@@ -63,7 +63,11 @@ export const EditorPick = ({ editorPreviews }: Props) => {
             <div className="flex gap-2">
               {highlight.categories.map((category) => {
                 if (category.title !== 'EDITOR') {
-                  return <p className="tag">{category.title}</p>
+                  return (
+                    <p key={category.title} className="tag">
+                      {category.title}
+                    </p>
+                  )
                 }
               })}
             </div>

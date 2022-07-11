@@ -14,11 +14,11 @@ const About: React.FC = () => {
       </div>
       <div className="w-1/2 relative pb-24">
         <div className="space-y-10 text-left flex flex-col items-start mb-52">
-          <h2 className="uppercase font-druk text-7xl text-primary-200">
+          <h4 className="uppercase font-druk text-7xl text-primary-200">
             We Are
             <br />
             Invader
-          </h2>
+          </h4>
           <p className="text-white font-kanit max-w-xl leading-loose text-lg">
             เรารวบรวม <span className="font-druk">App Poker </span>
             มากมายมาไว้ที่นี่่ที่่เดียว ทั้งเนื้อหา สาระความรู้ต่างๆ

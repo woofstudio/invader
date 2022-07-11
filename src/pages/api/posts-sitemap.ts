@@ -73,15 +73,7 @@ const nextSiteMap = async (req: NextApiRequest, res: NextApiResponse) => {
     })
 
     // Add other pages
-    const pages = [
-      '/',
-      '/คาสิโน',
-      '/แทงบอล',
-      '/ยิงปลา',
-      '/สล็อต',
-      'โปรโมชั่น',
-      '/บทความ',
-    ]
+    const pages = ['/']
     pages.forEach((url) => {
       links.push({
         url,

@@ -17,9 +17,9 @@ const Hero: React.FC = () => {
       className="h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative"
     >
       <div className="space-y-8 z-20 relative">
-        <h1 className="uppercase font-druk text-white text-5xl sm:text-5xl md:text-6xl lg:text-8xl max-w-lg">
+        <h2 className="uppercase font-druk text-white text-5xl sm:text-5xl md:text-6xl lg:text-8xl max-w-lg">
           Poker Invader
-        </h1>
+        </h2>
         <h3 className="font-kanit font-extralight tracking-widest text-xl text-white">
           ตัวเลือกที่ดีที่สุดในการเล่น Poker
         </h3>

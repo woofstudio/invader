@@ -9,6 +9,7 @@ import About from '../components/landing/About'
 import Community from '../components/landing/Community'
 import { sanityClient } from '../sanity'
 import { IBlogPreview } from '../types/interface'
+import { Meta, metaConfig } from '../config'
 
 interface Props {
   blogPreviews: IBlogPreview[]
@@ -16,19 +17,21 @@ interface Props {
 
 const Home: NextPage<Props> = ({ blogPreviews }: Props) => {
   return (
-    <>
-      <main>
-        <Hero />
-        <Links />
-        <Hr />
-        <Techniques />
-        <Hr />
-        <Blogs blogPreviews={blogPreviews} />
-        <Hr />
-        <About />
-        <Community />
-      </main>
-    </>
+    <main>
+      <Meta
+        title={metaConfig.index.title}
+        description={metaConfig.index.description}
+      />
+      <Hero />
+      <Links />
+      <Hr />
+      <Techniques />
+      <Hr />
+      <Blogs blogPreviews={blogPreviews} />
+      <Hr />
+      <About />
+      <Community />
+    </main>
   )
 }
 
