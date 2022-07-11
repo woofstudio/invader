@@ -47,7 +47,7 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
         </div>
       </div>
 
-      <div className="bg-dark-200 mx-20 py-12 max-width">
+      <div className="bg-dark-200 py-12 max-width">
         <div className="w-[832px] mx-auto space-y-10">
           <div className="flex space-x-4">
             {blog.categories.map((elem, index) => (
