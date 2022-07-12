@@ -11,7 +11,6 @@ export const queryCategory = async (category: string) => {
           title
         }
   }`
-
   const queryResult: IBlogPreview[] = await sanityClient.fetch(query)
   return queryResult
 }
