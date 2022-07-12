@@ -114,7 +114,7 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
           <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8">
             {blogPreviews.map((elem, index) => (
               <div key={index} className="space-y-3 md:w-72">
-                <div className="hidden md:block">
+                <div className="hidden md:block rounded-xl overflow-hidden">
                   <Image
                     src={urlFor(elem.previewImage).url()}
                     alt={elem.title}

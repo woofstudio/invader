@@ -7,9 +7,11 @@ import TechniquesIcon from '../../../public/img/landing/hero-techniques-icon.png
 import CommunityIcon from '../../../public/img/landing/hero-community-icon.png'
 import { useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Hero: React.FC = () => {
   const [hover, setHover] = useState(false)
+  const router = useRouter()
 
   return (
     <section
@@ -58,16 +60,16 @@ const Hero: React.FC = () => {
           >
             {hover && (
               <>
-                <Link href="/register/GGPOKER">
+                <Link href="/download/GGPOKER">
                   <div className="aspect-square bg-[url('/img/register/ggpoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="register/UPOKER">
+                <Link href="download/UPOKER">
                   <div className="aspect-square bg-[url('/img/register/upoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="/register/PPPOKER">
+                <Link href="/download/PPPOKER">
                   <div className="aspect-square bg-[url('/img/register/pppoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="/register/POKERBROS">
+                <Link href="/download/POKERBROS">
                   <div className="aspect-square bg-[url('/img/register/pokerbros.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
               </>
@@ -83,7 +85,12 @@ const Hero: React.FC = () => {
 
       {/* hero links */}
       <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[420px]">
-        <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
+        <div
+          className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6"
+          onClick={() => {
+            router.push(`download/GGPOKER}`)
+          }}
+        >
           <Image
             src={RegistrationIcon}
             alt="register"
@@ -94,7 +101,12 @@ const Hero: React.FC = () => {
             วิธีการสมัคร
           </h3>
         </div>
-        <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6">
+        <div
+          className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6"
+          onClick={() => {
+            router.push(`promotion`)
+          }}
+        >
           <Image
             src={PromotionsIcon}
             alt="promo"
