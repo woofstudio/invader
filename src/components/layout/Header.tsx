@@ -6,7 +6,7 @@ interface Props {
 }
 export const Header: React.FC<Props> = ({ imageURL, title }: Props) => {
   return (
-    <div className="flex justify-center relative w-full h-[720px] mt-40">
+    <div className="flex justify-center relative w-full h-96 lg:h-[720px] mt-40">
       <Image
         src={imageURL}
         alt={title}
