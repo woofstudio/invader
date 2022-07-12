@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
         <div
           className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6"
           onClick={() => {
-            router.push(`download/GGPOKER}`)
+            router.push(`download/GGPOKER`)
           }}
         >
           <Image

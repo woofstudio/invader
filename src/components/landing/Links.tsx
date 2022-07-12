@@ -15,30 +15,38 @@ const Links: React.FC = () => {
     >
       <div className="grid grid-cols-4 gap-6">
         <Link>
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
-            วิธีการสมัคร
-          </h3>
-          <div className="w-[40%] mt-[20%]">
-            <Image src={RegistrationIcon} alt="register" layout="responsive" />
-          </div>
-          <div className="absolute -bottom-[90%] xl:-bottom-[70%] -right-[21%] aspect-square w-[85%]">
-            <Image
-              src={RegistrationImg}
-              alt="register"
-              className="group-hover:-rotate-12 duration-300"
-              layout="responsive"
-              quality={100}
-              priority={true}
-            />
-          </div>
+          <a href="/download/GGPOKER">
+            <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+              วิธีการสมัคร
+            </h3>
+            <div className="w-[40%] mt-[20%]">
+              <Image
+                src={RegistrationIcon}
+                alt="register"
+                layout="responsive"
+              />
+            </div>
+            <div className="absolute -bottom-[90%] xl:-bottom-[70%] -right-[21%] aspect-square w-[85%]">
+              <Image
+                src={RegistrationImg}
+                alt="register"
+                className="group-hover:-rotate-12 duration-300"
+                layout="responsive"
+                quality={100}
+                priority={true}
+              />
+            </div>
+          </a>
         </Link>
         <Link>
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
-            โปรโมชั่น
-          </h3>
-          <div className="w-[40%] mt-[20%]">
-            <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
-          </div>
+          <a href="/promotion">
+            <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+              โปรโมชั่น
+            </h3>
+            <div className="w-[40%] mt-[20%]">
+              <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
+            </div>
+          </a>
         </Link>
         <Link>
           <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
