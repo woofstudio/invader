@@ -60,16 +60,16 @@ const Hero: React.FC = () => {
           >
             {hover && (
               <>
-                <Link href="/download/GGPOKER">
+                <Link href="/register/GGPOKER">
                   <div className="aspect-square bg-[url('/img/register/ggpoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="download/UPOKER">
+                <Link href="register/UPOKER">
                   <div className="aspect-square bg-[url('/img/register/upoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="/download/PPPOKER">
+                <Link href="/register/PPPOKER">
                   <div className="aspect-square bg-[url('/img/register/pppoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
-                <Link href="/download/POKERBROS">
+                <Link href="/register/POKERBROS">
                   <div className="aspect-square bg-[url('/img/register/pokerbros.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
               </>
