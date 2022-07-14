@@ -81,7 +81,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20">
         {/* heading & background */}
         <div
-          className={`w-full h-[70vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-80 lg:pt-40 ${
+          className={`w-full h-[65vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-80 lg:pt-40 ${
             router.pathname === TechniquesData[0].path &&
             TechniquesData[0].bgCoverCSS +
               ' ' +
@@ -107,9 +107,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               if (router.pathname === data.path) return data.description
             })}
           </p>
-          <hr className="border-primary-100 mt-10" />
+          <hr className="inline lg:hidden border-primary-100 mt-10" />
         </div>
-        <div className="absolute left-0 right-0 top-[58vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
+        <div className="absolute left-0 right-0 top-[53vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
         <div className="flex w-full">
           <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
             <MenuLink href="/newbie" title="Newbie Tips" />
@@ -132,7 +132,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-screen bg-black"></div>
+        <div className="w-full h-screen bg-[url('/img/article/fanpage-mobile.png')] bg-cover bg-center bg-no-repeat lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+          <h4 className="text-primary-100 font-druk text-3xl sm:text-4xl md:text-5xl text-center">
+            VISIT OUR
+            <br />
+            FANPAGE
+          </h4>
+          <div className="rounded-xl border-[1px] border-primary-100 flex items-center justify-between px-6 py-3 text-primary-200 cursor-pointer hover:bg-primary-100 hover:text-white duration-300 space-x-10">
+            <span className="font-extralight text-2xl">GO INVADE</span>
+            <span>{`-->`}</span>
+          </div>
+        </div>
       </div>
     </>
   )
