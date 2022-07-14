@@ -8,7 +8,6 @@ import {
   IPromotion,
   mapMonth,
 } from '../types/interface'
-import Image from 'next/image'
 import Header from '../components/layout/Header'
 import Hr from '../components/landing/Hr'
 import { Meta, metaConfig } from '../config'
@@ -138,8 +137,10 @@ const Promotion: NextPage<Props> = ({
               key={index}
               className="py-4 px-4 cursor-pointer text-black/75"
               onClick={() => {
-                handleChangeMonth(nextMonth)
-                setIsNextMonth(false)
+                if (index !== nextMonthPrmotion.length - 1) {
+                  handleChangeMonth(nextMonth)
+                  setIsNextMonth(false)
+                }
               }}
             >
               {index === nextMonthPrmotion.length - 1
