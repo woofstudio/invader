@@ -16,7 +16,8 @@ const RegistersData = [
       </>
     ),
     path: '/register/GGPOKER',
-    bgCoverCSS: "bg-[url('/img/register/desktop_register-banner_GG.jpg')]",
+    bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_GG.jpg')]",
+    bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_GG.jpg')]",
     iconCSS: '',
     downloadLink: '',
     color: '#EA232B',
@@ -35,7 +36,8 @@ const RegistersData = [
       </>
     ),
     path: '/register/PPPOKER',
-    bgCoverCSS: "bg-[url('/img/register/desktop_register-banner_PP.jpg')]",
+    bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_PP.jpg')]",
+    bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_PP.jpg')]",
     iconCSS: '',
     downloadLink: '',
     color: '#2AD16D',
@@ -54,7 +56,8 @@ const RegistersData = [
       </>
     ),
     path: '/register/UPOKER',
-    bgCoverCSS: "bg-[url('/img/register/desktop_register-banner_U.jpg')]",
+    bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_U.jpg')]",
+    bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_U.jpg')]",
     iconCSS: '',
     downloadLink: '',
     color: '#FFB339',
@@ -74,7 +77,9 @@ const RegistersData = [
       </>
     ),
     path: '/register/POKERBROS',
-    bgCoverCSS: "bg-[url('/img/register/desktop_register-banner_BROS.jpg')]",
+    bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_BROS.jpg')]",
+    bgMobileCoverCSS:
+      "bg-[url('/img/register/mobile_register-banner_BROS.jpg')]",
     iconCSS: '',
     downloadLink: '',
     color: '#5D3B8C',
@@ -85,29 +90,29 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter()
 
   return (
-    <div className="min-h-screen mt-40 overflow-hidden rounded-xl bg-dark-200 mx-8 sm:mx-10 md:mx-14 lg:mx-20 mb-20">
+    <div className="min-h-screen lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-100 lg:bg-dark-200 lg:mx-20 mb-20">
       {/* heading & background */}
       <div
-        className={`w-full h-[55vh] bg-cover bg-right bg-no-repeat px-20 2xl:px-36 pt-40 ${
+        className={`w-full h-[85vh] xl:h-[55vh] bg-cover bg-bottom lg:bg-right bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-40 ${
           router.pathname === RegistersData[0].path &&
-          RegistersData[0].bgCoverCSS
+          RegistersData[0].bgCoverCSS + ' ' + RegistersData[0].bgMobileCoverCSS
         } ${
           router.pathname === RegistersData[1].path &&
-          RegistersData[1].bgCoverCSS
+          RegistersData[1].bgCoverCSS + ' ' + RegistersData[1].bgMobileCoverCSS
         } ${
           router.pathname === RegistersData[2].path &&
-          RegistersData[2].bgCoverCSS
+          RegistersData[2].bgCoverCSS + ' ' + RegistersData[2].bgMobileCoverCSS
         } ${
           router.pathname === RegistersData[3].path &&
-          RegistersData[3].bgCoverCSS
+          RegistersData[3].bgCoverCSS + ' ' + RegistersData[3].bgMobileCoverCSS
         }`}
       >
-        <h1 className="uppercase font-druk font-bold text-7xl text-white">
+        <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
           {RegistersData.map((data) => {
             if (router.pathname === data.path) return data.title
           })}
         </h1>
-        <p className="font-kanit font-light text-xl text-opacity-90 text-white mt-8 mb-12">
+        <p className="font-kanit font-light text-lg lg:text-xl text-opacity-90 text-white mt-8 mb-12">
           {RegistersData.map((data) => {
             if (router.pathname === data.path) return data.description
           })}
@@ -118,7 +123,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <a
                 key={idx}
                 href={data.downloadLink}
-                className={`rounded-full px-14 py-4 uppercase text-white`}
+                className={`hidden lg:inline rounded-full px-14 py-4 uppercase text-white`}
                 style={{
                   backgroundColor: data.color,
                 }}
@@ -131,20 +136,35 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* body */}
       <div className="flex w-full pt-12">
-        <div className="w-96 flex flex-col px-10 select-none space-y-8">
+        <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
           <MenuLink href="/register/GGPOKER" title="GGPOKER" />
           <MenuLink href="/register/PPPOKER" title="PPPOKER" />
           <MenuLink href="/register/UPOKER" title="UPOKER" />
           <MenuLink href="/register/POKERBROS" title="POKERBROS" />
         </div>
         <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
-          <div className="flex justify-center w-full">
-            <h2 className="text-white text-2xl font-druk font-medium">
+          <div className="flex flex-col items-center space-y-10 justify-center w-full text-center px-5">
+            {RegistersData.map((data, idx) => {
+              if (router.pathname === data.path)
+                return (
+                  <a
+                    key={idx}
+                    href={data.downloadLink}
+                    className={`lg:hidden rounded-full px-14 py-4 uppercase text-white`}
+                    style={{
+                      backgroundColor: data.color,
+                    }}
+                  >
+                    Download
+                  </a>
+                )
+            })}
+            <h2 className="text-white text-lg lg:text-2xl font-druk font-medium">
               Download & Play In Minutes
             </h2>
           </div>
           <div className="max-w-screen-2xl mx-auto">
-            <div className="grid grid-cols-2 2xl:grid-cols-3 gap-10 p-16 2xl:p-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10 p-16 2xl:p-20">
               {children}
             </div>
           </div>

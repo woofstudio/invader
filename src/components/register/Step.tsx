@@ -8,10 +8,10 @@ interface Props {
 
 const Step: React.FC<Props> = ({ text, idx, image }) => {
   return (
-    <div className="space-y-4 pb-10">
+    <div className="space-y-4 pb-10 text-center lg:text-left">
       <span className="font-druk text-dark-400 text-7xl">{idx + 1}.</span>
       <div className="bg-dark-400 aspect-[8/9] rounded-2xl overflow-hidden flex flex-col items-center">
-        <div className="h-[55%] w-full px-20 py-4">
+        <div className="h-[55%] w-full px-5 lg:px-20 py-4">
           <div className="w-full rounded-2xl h-full relative">
             <Image
               src={image}
