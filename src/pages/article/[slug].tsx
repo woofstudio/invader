@@ -15,6 +15,7 @@ interface Props {
 }
 
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
+  console.log(blog)
   return (
     <div>
       <Meta title={blog.title} description={blog.description} />
@@ -44,8 +45,8 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
         </div>
       </div>
 
-      <div className="bg-dark-200 py-12 max-width">
-        <div className="w-[832px] mx-auto space-y-10">
+      <div className="bg-dark-200 py-12 px-12 md:px-20 max-width">
+        <div className="mx-auto space-y-10">
           <div className="flex space-x-4">
             {blog.categories.map((elem, index) => {
               if (elem.title !== 'EDITOR') {
@@ -92,14 +93,14 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
 
               link: (props: any) => <a className="text-2xl" {...props} />,
               image: (props: any) => (
-                <div className="relative w-full hidden">
-                  <Image
-                    className="lazy img-responsive"
-                    src={urlFor(props.asset._ref).url()}
-                    alt={props.asset._ref}
-                    layout="fill"
-                  />
-                </div>
+                <Image
+                  className="lazy img-responsive"
+                  src={urlFor(props.asset._ref).url()}
+                  alt={props.asset._ref}
+                  width={16}
+                  height={9}
+                  layout="responsive"
+                />
               ),
             }}
           />
@@ -111,7 +112,7 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
           <h2 className="font-bold md:text-black md:text-[55px] md:mx-auto md:text-center w-fit max-w-[600px] border-b-2 border-primary-200 md:border-0 font-druk">
             MORE FROM INVADER
           </h2>
-          <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8">
+          <div className="flex flex-col space-y-6 md:justify-center md:flex-row md:space-y-0 md:space-x-8">
             {blogPreviews.map((elem, index) => (
               <div key={index} className="space-y-3 md:w-72">
                 <div className="hidden md:block rounded-xl overflow-hidden">
