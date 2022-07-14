@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const TechniquesData = [
   {
     path: '/newbie',
-    bgCoverCSS: "bg-[url('/img/techniques/banner-newbie.jpg')]",
+    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-newbie.jpg')]",
     title: (
       <>
         Newbie
@@ -23,7 +23,7 @@ const TechniquesData = [
   },
   {
     path: '/cash-game',
-    bgCoverCSS: "bg-[url('/img/techniques/banner-cashgame.jpg')]",
+    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-cashgame.jpg')]",
     title: (
       <>
         Cash
@@ -42,7 +42,7 @@ const TechniquesData = [
   },
   {
     path: '/tournament',
-    bgCoverCSS: "bg-[url('/img/techniques/banner-tournament.jpg')]",
+    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-tournament.jpg')]",
     title: (
       <>
         MTT
@@ -61,7 +61,7 @@ const TechniquesData = [
   },
   {
     path: '/101',
-    bgCoverCSS: "bg-[url('/img/techniques/banner-tournament.jpg')]",
+    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-tournament.jpg')]",
     title: <>Invader 101</>,
     description: (
       <>
@@ -77,58 +77,64 @@ const TechniquesData = [
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter()
   return (
-    <div className="min-h-screen relative mt-40 overflow-hidden rounded-xl bg-dark-500 mx-8 sm:mx-10 md:mx-14 lg:mx-20 xl:mx-24 2xl:mx-32 mb-20">
-      {/* heading & background */}
-      <div
-        className={`w-full h-[70vh] bg-cover bg-no-repeat px-20 2xl:px-36 pt-40 ${
-          router.pathname === TechniquesData[0].path &&
-          TechniquesData[0].bgCoverCSS
-        } ${
-          router.pathname === '/cash-game' &&
-          "bg-[url('/img/techniques/banner-cashgame.jpg')]"
-        } ${
-          router.pathname === '/tournament' &&
-          "bg-[url('/img/techniques/banner-tournament.jpg')]"
-        } ${
-          router.pathname === '/101' &&
-          "bg-[url('/img/techniques/banner-101.jpg')]"
-        }`}
-      >
-        <h1 className="uppercase font-druk font-bold text-7xl text-primary-100">
-          {TechniquesData.map((data) => {
-            if (router.pathname === data.path) return data.title
-          })}
-        </h1>
-        <p className="font-kanit font-light text-xl text-opacity-90 text-white mt-8">
-          {TechniquesData.map((data) => {
-            if (router.pathname === data.path) return data.description
-          })}
-        </p>
-      </div>
-      <div className="absolute left-0 right-0 top-[58vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
-      <div className="flex w-full">
-        <div className="w-96 flex flex-col px-10 select-none space-y-8">
-          <MenuLink href="/newbie" title="Newbie Tips" />
-          <MenuLink href="/cash-game" title="Cash Game" />
-          <MenuLink href="/tournament" title="Tournament" />
-          <MenuLink href="/101" title="Invader : 101" />
+    <>
+      <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20">
+        {/* heading & background */}
+        <div
+          className={`w-full h-[70vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-80 lg:pt-40 ${
+            router.pathname === TechniquesData[0].path &&
+            TechniquesData[0].bgCoverCSS +
+              ' ' +
+              "bg-[url('/img/techniques/mobile_banner-newbie.jpg')]"
+          } ${
+            router.pathname === '/cash-game' &&
+            "lg:bg-[url('/img/techniques/banner-cashgame.jpg')] bg-[url('/img/techniques/mobile_banner-cashgame.jpg')]"
+          } ${
+            router.pathname === '/tournament' &&
+            "lg:bg-[url('/img/techniques/banner-tournament.jpg')] bg-[url('/img/techniques/mobile_banner-tournament.jpg')]"
+          } ${
+            router.pathname === '/101' &&
+            "lg:bg-[url('/img/techniques/banner-101.jpg')] bg-[url('/img/techniques/mobile_banner-101.jpg')]"
+          }`}
+        >
+          <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-100">
+            {TechniquesData.map((data) => {
+              if (router.pathname === data.path) return data.title
+            })}
+          </h1>
+          <p className="font-kanit font-light text-lg lg:text-xl text-opacity-80 lg:text-opacity-90 text-white mt-8">
+            {TechniquesData.map((data) => {
+              if (router.pathname === data.path) return data.description
+            })}
+          </p>
+          <hr className="border-primary-100 mt-10" />
         </div>
-        <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
-          <div className="flex justify-center w-full">
-            <h2 className="text-white text-2xl font-kanit font-medium">
-              {TechniquesData.map((data) => {
-                if (router.pathname === data.path) return data.subtitle
-              })}
-            </h2>
+        <div className="absolute left-0 right-0 top-[58vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
+        <div className="flex w-full">
+          <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
+            <MenuLink href="/newbie" title="Newbie Tips" />
+            <MenuLink href="/cash-game" title="Cash Game" />
+            <MenuLink href="/tournament" title="Tournament" />
+            <MenuLink href="/101" title="Invader : 101" />
           </div>
-          <div className="max-w-screen-2xl mx-auto">
-            <div className="grid grid-cols-2 xl:grid-cols-3 gap-10 p-16 2xl:p-20">
-              {children}
+          <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
+            <div className="flex justify-center w-full px-10 text-center">
+              <h2 className="text-white text-lg lg:text-2xl font-kanit font-medium">
+                {TechniquesData.map((data) => {
+                  if (router.pathname === data.path) return data.subtitle
+                })}
+              </h2>
+            </div>
+            <div className="max-w-screen-2xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 p-10 lg:p-16 2xl:p-20">
+                {children}
+              </div>
             </div>
           </div>
         </div>
+        <div className="w-full h-screen bg-black"></div>
       </div>
-    </div>
+    </>
   )
 }
 
