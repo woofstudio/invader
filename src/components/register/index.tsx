@@ -88,7 +88,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="min-h-screen mt-40 overflow-hidden rounded-xl bg-dark-200 mx-8 sm:mx-10 md:mx-14 lg:mx-20 mb-20">
       {/* heading & background */}
       <div
-        className={`w-full h-[55vh] bg-contain bg-no-repeat px-20 2xl:px-36 pt-40 ${
+        className={`w-full h-[55vh] bg-cover bg-right bg-no-repeat px-20 2xl:px-36 pt-40 ${
           router.pathname === RegistersData[0].path &&
           RegistersData[0].bgCoverCSS
         } ${
@@ -132,10 +132,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* body */}
       <div className="flex w-full pt-12">
         <div className="w-96 flex flex-col px-10 select-none space-y-8">
-          <MenuLink href="/register/GGPOKER" title="Newbie Tips" />
-          <MenuLink href="/register/PPPOKER" title="Cash Game" />
-          <MenuLink href="/register/UPOKER" title="Tournament" />
-          <MenuLink href="/register/POKERBROS" title="Invader : 101" />
+          <MenuLink href="/register/GGPOKER" title="GGPOKER" />
+          <MenuLink href="/register/PPPOKER" title="PPPOKER" />
+          <MenuLink href="/register/UPOKER" title="UPOKER" />
+          <MenuLink href="/register/POKERBROS" title="POKERBROS" />
         </div>
         <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
           <div className="flex justify-center w-full">
