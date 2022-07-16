@@ -84,7 +84,7 @@ const nextSiteMap = async (req: NextApiRequest, res: NextApiResponse) => {
 
     // Create a stream to write to
     const stream = new SitemapStream({
-      hostname: `https://${req.headers.host}`,
+      hostname: `https://www.${req.headers.host}`,
     })
 
     res.writeHead(200, {
