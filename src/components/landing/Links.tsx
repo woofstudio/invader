@@ -13,17 +13,20 @@ const Links: React.FC = () => {
   return (
     <section
       id="links"
-      className="bg-dark-100 w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 py-8 hidden lg:block"
+      className="bg-dark-100 w-full space-y-12 px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 py-8 hidden lg:block"
     >
+      <h1 className="font-medium text-4xl sm:text-5xl lg:text-6xl">
+        โป๊กเกอร์
+      </h1>
       <div className="grid grid-cols-4 gap-6">
         <Link
           onClick={() => {
             router.push(`download/GGPOKER`)
           }}
         >
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+          <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             วิธีการสมัคร
-          </h3>
+          </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={RegistrationIcon} alt="register" layout="responsive" />
           </div>
@@ -43,25 +46,25 @@ const Links: React.FC = () => {
             router.push(`promotion`)
           }}
         >
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+          <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             โปรโมชั่น
-          </h3>
+          </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
           </div>
         </Link>
         <Link onClick={() => {}}>
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+          <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             เทคนิคการเล่น
-          </h3>
+          </h6>
           <div className="w-[28%] mt-[20%]">
             <Image src={TechniquesIcon} alt="tech" layout="responsive" />
           </div>
         </Link>
         <Link onClick={() => {}}>
-          <h3 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
+          <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             Community
-          </h3>
+          </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={CommunityIcon} alt="community" layout="responsive" />
           </div>

@@ -15,7 +15,6 @@ interface Props {
 }
 
 const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
-  console.log(blog)
   return (
     <div>
       <Meta title={blog.title} description={blog.description} />

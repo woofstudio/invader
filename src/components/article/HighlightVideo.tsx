@@ -21,15 +21,6 @@ export const HighlightVideo = () => {
           width={334}
           height={216}
         />
-        <div className="hidden md:block absolute -top-10 -left-16">
-          <Image
-            src="/img/article/tv.png"
-            alt="tv"
-            width={600}
-            height={310}
-            layout="fixed"
-          />
-        </div>
       </div>
     </section>
   )

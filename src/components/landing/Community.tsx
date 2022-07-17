@@ -8,14 +8,14 @@ const Community: React.FC = () => {
   return (
     <section
       id="commuinity"
-      className="w-full p-32 flex justify-between"
+      className="w-full px-12 py-20 lg:p-32 flex justify-between"
       style={{
         background: 'linear-gradient(155.04deg, #FACB48 3.36%, #FFFFFF 67.79%)',
       }}
     >
-      <div className="space-y-10">
+      <div className="space-y-10 relative">
         <Image src={IvdLogoBlack} alt="Invader Black Logo" />
-        <h2 className="uppercase font-druk text-7xl text-dark-400 pt-10">
+        <h2 className="uppercase font-druk text-5xl md:text-7xl text-dark-400">
           Play Online
           <br />
           Poker
@@ -42,8 +42,11 @@ const Community: React.FC = () => {
             Join Discord
           </a>
         </div>
+        <div className="absolute md:hidden -right-0 -bottom-4 w-[30%] sm:w-[50%]">
+          <Image src={CommunityImg} alt="commu" priority={true} quality={100} />
+        </div>
       </div>
-      <div className="flex flex-col justify-end">
+      <div className="md:flex flex-col justify-end hidden">
         <Image src={CommunityImg} alt="commu" priority={true} quality={100} />
       </div>
     </section>

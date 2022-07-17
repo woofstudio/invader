@@ -14,6 +14,7 @@ interface Props {
 export const EditorPick = ({ editorPreviews }: Props) => {
   const [highlight] = useState<IBlogPreview>(editorPreviews[0])
   const router = useRouter()
+  console.log(highlight)
 
   return (
     <section
@@ -23,7 +24,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
       <h1 className="text-primary-200 hidden md:block text-2xl font-bold font-druk">
         {"EDITOR'S PICK"}
       </h1>
-      <div className="flex flex-col-reverse xl:space-x-20 md:space-y-8 xl:space-y-0 md:flex-col xl:flex-row">
+      <div className="flex flex-col-reverse md:flex-col xl:space-x-20 md:space-y-8 xl:space-y-0 xl:flex-row">
         <div className="flex-1 px-10 md:px-0">
           <h1 className="text-primary-200 my-5 underline md:hidden block text-lg font-bold font-druk">
             {"EDITOR'S PICK"}
@@ -45,6 +46,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
               src={urlFor(highlight.previewImage).url()}
               alt={highlight.title}
               layout="fill"
+              objectFit="cover"
             />
             <div className="absolute w-80 hidden md:block p-5 left-0 z-20 bottom-0">
               <p className="text-xl font-semibold">{highlight.title}</p>
@@ -99,6 +101,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
                   src={urlFor(elem.previewImage).url()}
                   alt={elem.title}
                   layout="fill"
+                  priority={true}
                 />
               </div>
               <div className="space-y-2 w-72">
@@ -113,7 +116,21 @@ export const EditorPick = ({ editorPreviews }: Props) => {
           ))}
         </div>
         <div className="block md:hidden">
-          <Carousel>
+          <Carousel
+            dragThreshold={0.1}
+            defaultControlsConfig={{
+              nextButtonClassName: 'hidden',
+              prevButtonClassName: 'hidden',
+              pagingDotsContainerClassName: 'space-x-2',
+              pagingDotsStyle: {
+                fill: '#FFBF00',
+              },
+            }}
+            autoplay
+            autoplayReverse
+            autoplayInterval={2000}
+            className="block lg:hidden"
+          >
             {editorPreviews.slice(1).map((elem, index) => (
               <div
                 key={index}
@@ -133,6 +150,8 @@ export const EditorPick = ({ editorPreviews }: Props) => {
                   src={urlFor(elem.previewImage).url()}
                   alt={elem.title}
                   layout="fill"
+                  objectFit="cover"
+                  priority={true}
                 />
                 <div className="absolute w-80 left-8 px-4 bottom-20 border-l-4 z-20 border-primary-200">
                   <p className="text-base font-druk font-semibold text-primary-200">

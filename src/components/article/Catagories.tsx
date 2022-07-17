@@ -52,7 +52,7 @@ export const Catagories = ({ categoryPreviews, queryCategory }: Props) => {
               </div>
             ))}
           </div>
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryCards.map((elem, index) => (
               <div
                 key={index}
@@ -61,14 +61,16 @@ export const Catagories = ({ categoryPreviews, queryCategory }: Props) => {
                   router.push(`article/${elem.slug}`)
                 }}
               >
-                <div className="w-full h-60 sm:w-72 sm:h-44 relative rounded-xl overflow-hidden">
+                <div className="w-full aspect-video relative rounded-xl overflow-hidden">
                   <Image
                     src={urlFor(elem.previewImage).url()}
                     alt={elem.title}
                     layout="fill"
+                    objectFit="cover"
+                    priority={true}
                   />
                 </div>
-                <div className="space-y-2 sm:w-72 w-full">
+                <div className="space-y-2 w-full">
                   <p className="text-xl font-semibold line-clamp-2">
                     {elem.title}
                   </p>
