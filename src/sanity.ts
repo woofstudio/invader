@@ -10,6 +10,7 @@ import {
   createPreviewSubscriptionHook,
 } from 'next-sanity'
 
+
 const config: ClientConfig = {
   /**
    * Find your project ID and dataset in `sanity.json` in your studio project.
