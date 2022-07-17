@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Blogs: React.FC<Props> = ({ blogPreviews }: Props) => {
-  console.log(blogPreviews)
+  // console.log(blogPreviews)
   return (
     <section
       id="blog"

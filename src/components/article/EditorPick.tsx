@@ -14,7 +14,7 @@ interface Props {
 export const EditorPick = ({ editorPreviews }: Props) => {
   const [highlight] = useState<IBlogPreview>(editorPreviews[0])
   const router = useRouter()
-  console.log(highlight)
+  // console.log(highlight)
 
   return (
     <section
