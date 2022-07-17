@@ -1,6 +1,8 @@
 export interface IBlogPreview {
   title: string
+  description: string
   slug: string
+  previewMobileImage: string
   previewImage: string
   publishedAt: string
   categories: { title: string }[]
@@ -15,7 +17,6 @@ export interface IBlog {
   body: [object]
   categories: { title: string }[]
 }
-
 
 export type IMonth = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 

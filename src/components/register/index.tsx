@@ -15,7 +15,7 @@ const RegistersData = [
         Tournament จัดเต็ม ทั้งวัน ทั้งคืน
       </>
     ),
-    path: '/register/GGPOKER',
+    path: '/download/GGPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_GG.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_GG.jpg')]",
     iconCSS: '',
@@ -35,7 +35,7 @@ const RegistersData = [
         จากคนรักโป๊กเกอร์ตัวจริง
       </>
     ),
-    path: '/register/PPPOKER',
+    path: '/download/PPPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_PP.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_PP.jpg')]",
     iconCSS: '',
@@ -55,7 +55,7 @@ const RegistersData = [
         เล่นหนักเล่นเบา แอพเดียวมีครบ
       </>
     ),
-    path: '/register/UPOKER',
+    path: '/download/UPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_U.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_U.jpg')]",
     iconCSS: '',
@@ -76,7 +76,7 @@ const RegistersData = [
         ด้วยแอพที่ออกแบบมาให้สำหรับมือใหม่ไปจนถึงมือโปร
       </>
     ),
-    path: '/register/POKERBROS',
+    path: '/download/POKERBROS',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_BROS.jpg')]",
     bgMobileCoverCSS:
       "bg-[url('/img/register/mobile_register-banner_BROS.jpg')]",
@@ -137,10 +137,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* body */}
       <div className="flex w-full pt-12">
         <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
-          <MenuLink href="/register/GGPOKER" title="GGPOKER" />
-          <MenuLink href="/register/PPPOKER" title="PPPOKER" />
-          <MenuLink href="/register/UPOKER" title="UPOKER" />
-          <MenuLink href="/register/POKERBROS" title="POKERBROS" />
+          <MenuLink href="/download/GGPOKER" title="GGPOKER" />
+          <MenuLink href="/download/PPPOKER" title="PPPOKER" />
+          <MenuLink href="/download/UPOKER" title="UPOKER" />
+          <MenuLink href="/download/POKERBROS" title="POKERBROS" />
         </div>
         <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
           <div className="flex flex-col items-center space-y-10 justify-center w-full text-center px-5">

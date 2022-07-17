@@ -3,7 +3,7 @@ import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques'
 import { Meta, metaConfig } from '../config'
 import { IBlogPreview } from '../types/interface'
-import { queryCategory } from '../util'
+import { queryCategoryPreview } from '../util'
 interface Props {
   tournamentPreviews: IBlogPreview[]
 }
@@ -24,7 +24,7 @@ const Tournament: NextPage<Props> = ({ tournamentPreviews }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const tournamentPreviews = await queryCategory('MTT TOURNAMENT')
+  const tournamentPreviews = await queryCategoryPreview('MTT TOURNAMENT')
   return {
     props: {
       tournamentPreviews,

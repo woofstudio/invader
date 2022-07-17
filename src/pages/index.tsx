@@ -38,6 +38,7 @@ const Home: NextPage<Props> = ({ blogPreviews }: Props) => {
 export const getStaticProps: GetStaticProps = async () => {
   const queryPreviews = `*[_type == "post"][0...4] | order(publishedAt desc){
         title,
+        description,
         "slug": slug.current,
         "previewImage":previewImage.asset._ref,
         publishedAt

@@ -2,7 +2,7 @@ import { GetStaticProps, NextPage } from 'next'
 import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques'
 import { Meta, metaConfig } from '../config'
-import { queryCategory } from '../util'
+import { queryCategoryPreview } from '../util'
 import { IBlogPreview } from '../types/interface'
 
 interface Props {
@@ -25,7 +25,7 @@ const Cashgame: NextPage<Props> = ({ cashgamePreviews }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const cashgamePreviews = await queryCategory('CASH GAME')
+  const cashgamePreviews = await queryCategoryPreview('CASH GAME')
   return {
     props: {
       cashgamePreviews,

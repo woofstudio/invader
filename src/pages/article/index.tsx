@@ -8,7 +8,7 @@ import {
   LatestArticles,
 } from '../../components/article'
 import { IBlogPreview } from '../../types/interface'
-import { queryCategory } from '../../util'
+import { queryCategoryPreview } from '../../util'
 
 interface Props {
   editorPreviews: IBlogPreview[]
@@ -24,7 +24,7 @@ const Articles: NextPage<Props> = ({
       <EditorPick editorPreviews={editorPreviews} />
       <Catagories
         categoryPreviews={categoryPreviews}
-        queryCategory={queryCategory}
+        queryCategory={queryCategoryPreview}
       />
       <FanPage />
       <HighlightVideo />
@@ -33,8 +33,8 @@ const Articles: NextPage<Props> = ({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const editorPreviews = await queryCategory('EDITOR')
-  const categoryPreviews = await queryCategory('สาระ Poker')
+  const editorPreviews = await queryCategoryPreview('EDITOR')
+  const categoryPreviews = await queryCategoryPreview('สาระ Poker')
   // console.log(editorPreviews)
   return {
     props: {
