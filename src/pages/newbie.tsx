@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques'
 import { Meta, metaConfig } from '../config'
-import { queryCategory } from '../util'
+import { queryCategoryPreview } from '../util'
 import { IBlogPreview } from '../types/interface'
 interface Props {
   newbiePreviews: IBlogPreview[]
@@ -25,7 +25,7 @@ const Newbie: NextPage<Props> = ({ newbiePreviews }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const newbiePreviews = await queryCategory('NEWBIE')
+  const newbiePreviews = await queryCategoryPreview('NEWBIE')
   return {
     props: {
       newbiePreviews,

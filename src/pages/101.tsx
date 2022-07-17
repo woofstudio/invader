@@ -3,7 +3,7 @@ import ArticleLink from '../components/techniques/ArticleLink'
 import Layout from '../components/techniques'
 import { Meta, metaConfig } from '../config'
 import { IBlogPreview } from '../types/interface'
-import { queryCategory } from '../util'
+import { queryCategoryPreview } from '../util'
 interface Props {
   invader101Previews: IBlogPreview[]
 }
@@ -24,7 +24,7 @@ const HowTo: NextPage<Props> = ({ invader101Previews }: Props) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const invader101Previews = await queryCategory('INVADER 101')
+  const invader101Previews = await queryCategoryPreview('INVADER 101')
   return {
     props: {
       invader101Previews,

@@ -15,6 +15,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
   const [highlight] = useState<IBlogPreview>(editorPreviews[0])
   const router = useRouter()
   // console.log(highlight)
+  // console.log(editorPreviews)
 
   return (
     <section
@@ -76,9 +77,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
 
             {/* need description */}
             <p className="text-sm font-light line-clamp-3">
-              โป๊กเกอร์นับเป็นกีฬาได้ยังไง?ในเมื่อไม่เห็นมีการออกแรงอะไรเลย
-              ดูยังไงก็ไม่เหมือนพวกฟุตบอลหรือบาสเก็ตบอลเลยสักนิด
-              บทสรุปของคำถามโลกแตกนี้คืออะไร... ไปอ่านกันต่อเลย
+              {highlight.description}
             </p>
           </div>
           <div className="flex cursor-pointer underline justify-end md:hidden">
@@ -147,7 +146,7 @@ export const EditorPick = ({ editorPreviews }: Props) => {
                   }}
                 />
                 <Image
-                  src={urlFor(elem.previewImage).url()}
+                  src={urlFor(elem.previewMobileImage).url()}
                   alt={elem.title}
                   layout="fill"
                   objectFit="cover"
