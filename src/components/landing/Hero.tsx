@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
 
         {/* play button */}
         <div
-          className="w-[48vw] h-40 rounded-xl overflow-hidden relative"
+          className="w-[48vw] h-40 rounded-xl overflow-hidden relative hidden md:block"
           onMouseLeave={() => setHover(false)}
         >
           <div
