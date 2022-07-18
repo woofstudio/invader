@@ -7,9 +7,13 @@ import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import { useRouter } from 'next/router'
 import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
+const regex: RegExp = /\/download\/[A-Z]+/g
+
 export const Navigation: React.FC = () => {
-  const [show, setShow] = useState(false)
   const { events, back, pathname } = useRouter()
+  const [show, setShow] = useState(false)
+  const [showApps, setShowApps] = useState(false)
+  const [isDownloadScreen, setIsDownloadScreen] = useState(regex.test(pathname))
 
   useEffect(() => {
     if (show) {
@@ -19,11 +23,23 @@ export const Navigation: React.FC = () => {
     }
   }, [show])
 
+  useEffect(() => {
+    setIsDownloadScreen(regex.test(pathname))
+    console.log('pathname', regex.test(pathname))
+  }, [pathname])
+
   const openSidebar = useCallback(() => {
     setShow(true)
   }, [])
   const closeSidebar = useCallback(() => {
     setShow(false)
+  }, [])
+
+  const openAppBar = useCallback(() => {
+    setShowApps(true)
+  }, [])
+  const closeAppBar = useCallback(() => {
+    setShowApps(false)
   }, [])
 
   useEffect(() => {
@@ -35,6 +51,15 @@ export const Navigation: React.FC = () => {
     }
   }, [events, closeSidebar])
 
+  useEffect(() => {
+    // subscribe to next/router event
+    events.on('routeChangeStart', closeAppBar)
+    return () => {
+      // unsubscribe to event on unmount to prevent memory leak
+      events.off('routeChangeStart', closeAppBar)
+    }
+  }, [events, closeAppBar])
+
   return (
     <>
       <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-10">
@@ -45,7 +70,20 @@ export const Navigation: React.FC = () => {
         ) : (
           <BsChevronLeft size={40} color="#FFD261" onClick={back} />
         )}
-        <div className="cursor-pointer" onClick={openSidebar}>
+        <p
+          className={`underline underline-offset-2 cursor-pointer ${
+            isDownloadScreen ? 'block sm:hidden' : 'hidden'
+          }`}
+          onClick={openAppBar}
+        >
+          TAP TO SEE OTHERS APP
+        </p>
+        <div
+          className={`cursor-pointer ${
+            isDownloadScreen ? 'invisible sm:visible' : 'block'
+          }`}
+          onClick={openSidebar}
+        >
           <FiMenu color="#C4C4C4" size={40} />
         </div>
       </nav>
@@ -98,6 +136,41 @@ export const Navigation: React.FC = () => {
               YOUTUBE
             </a>
           </div>
+        </div>
+      </div>
+      <div
+        className={`fixed z-50 top-0 right-0 w-full h-screen transition-all duration-300 bg-black flex flex-col items-center justify-center ${
+          showApps ? 'translate-y-0' : '-translate-y-full'
+        } ease-in-out duration-150`}
+      >
+        <div className="cursor-pointer absolute top-12" onClick={closeAppBar}>
+          <BsXLg color="#FFFFF" size={30} />
+        </div>
+        <div className="flex flex-col space-y-16 items-center">
+          <Link href="/download/GGPOKER">
+            <a className="uppercase font-druk font-bold text-3xl text-white">
+              <span className="text-ggpoker">GG</span>POKER
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/download/PPPOKER">
+            <a className="uppercase font-druk font-bold text-3xl text-white">
+              <span className="text-pppoker">PP</span>POKER
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/download/UPOKER">
+            <a className="uppercase font-druk font-bold text-3xl text-white">
+              <span className="text-upoker">U</span>POKER
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/download/POKERBROS">
+            <a className="uppercase font-druk font-bold text-3xl text-white">
+              <span className="text-upoker">POKER</span>
+              <span className="text-ggpoker">B</span>ROS
+            </a>
+          </Link>
         </div>
       </div>
     </>
