@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 const RegistersData = [
   {
@@ -137,10 +138,30 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* body */}
       <div className="flex w-full pt-12">
         <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
-          <MenuLink href="/download/GGPOKER" title="GGPOKER" />
-          <MenuLink href="/download/PPPOKER" title="PPPOKER" />
-          <MenuLink href="/download/UPOKER" title="UPOKER" />
-          <MenuLink href="/download/POKERBROS" title="POKERBROS" />
+          <MenuLink
+            href="/download/GGPOKER"
+            title="GGPOKER"
+            imageLink="/img/register/ggpoker-icon.png"
+            activeImageLink="/img/register/ggpoker-icon-active.png"
+          />
+          <MenuLink
+            href="/download/PPPOKER"
+            title="PPPOKER"
+            imageLink="/img/register/pppoker-icon.png"
+            activeImageLink="/img/register/pppoker-icon-active.png"
+          />
+          <MenuLink
+            href="/download/UPOKER"
+            title="UPOKER"
+            imageLink="/img/register/upoker-icon.png"
+            activeImageLink="/img/register/upoker-icon-active.png"
+          />
+          <MenuLink
+            href="/download/POKERBROS"
+            title="POKERBROS"
+            imageLink="/img/register/pokerbros-icon.png"
+            activeImageLink="/img/register/pokerbros-icon-active.png"
+          />
         </div>
         <div className="w-full border-l-[1px] border-white border-opacity-20 min-h-screen">
           <div className="flex flex-col items-center space-y-10 justify-center w-full text-center px-5">
@@ -177,20 +198,29 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 interface MenuLinkProps {
   href: string
   title: string
+  imageLink: string
+  activeImageLink: string
 }
 
-const MenuLink: React.FC<MenuLinkProps> = ({ href, title }) => {
+const MenuLink: React.FC<MenuLinkProps> = ({
+  href,
+  title,
+  imageLink,
+  activeImageLink,
+}) => {
   const router = useRouter()
   let active
   active = router.pathname === href
   return (
     <Link href={href} scroll={false}>
       <div
-        className={`w-full h-[5.5rem] grid place-content-center ${
-          active ? 'bg-dark-500 text-white' : 'bg-dark-400 text-white'
-        } rounded-md uppercase font-kanit font-normal text-lg cursor-pointer`}
+        className={`w-full h-[5.5rem] relative rounded-md cursor-pointer hover:opacity-80`}
       >
-        {title}
+        <Image
+          src={active ? activeImageLink : imageLink}
+          alt={title}
+          layout="fill"
+        />
       </div>
     </Link>
   )
