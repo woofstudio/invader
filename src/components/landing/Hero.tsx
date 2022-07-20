@@ -19,10 +19,10 @@ const Hero: React.FC = () => {
       className="h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative"
     >
       <div className="space-y-8 z-20 relative">
-        <h2 className="uppercase font-druk text-white text-5xl sm:text-5xl md:text-6xl lg:text-8xl max-w-lg">
+        <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-8xl max-w-lg">
           Poker Invader
         </h2>
-        <h3 className="font-kanit font-extralight tracking-widest text-2xl text-white">
+        <h3 className="font-kanit font-extralight tracking-widest md:text-2xl text-white">
           ตัวเลือกที่ดีที่สุดในการเล่น Poker
         </h3>
 
@@ -142,7 +142,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* scroll down button */}
-      <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center lg:hidden place-content-center">
+      <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center lg:hidden place-content-center">
         <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
           scroll down
         </span>
