@@ -1,16 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ReactNode } from 'react'
+import { Link as Scroll } from 'react-scroll'
 import RegistrationImg from '../../../public/img/landing/links-registration-img.png'
 
 import RegistrationIcon from '../../../public/img/landing/links-registration-icon.png'
 import PromotionsIcon from '../../../public/img/landing/links-promotions-icon.png'
 import TechniquesIcon from '../../../public/img/landing/links-techniques-icon.png'
 import CommunityIcon from '../../../public/img/landing/links-community-icon.png'
-import { useRouter } from 'next/router'
 
 const Links: React.FC = () => {
-  const router = useRouter()
   return (
     <section
       id="links"
