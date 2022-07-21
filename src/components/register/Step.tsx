@@ -19,6 +19,7 @@ const Step: React.FC<Props> = ({ text, idx, image }) => {
               objectFit="contain"
               quality={100}
               priority={true}
+              alt="app"
             />
           </div>
         </div>

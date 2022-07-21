@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen md:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
+      className="sm:min-h-screen md:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
     >
       <div className="space-y-8 z-20 relative md:pb-60">
         <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-lg">
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* hero links */}
-      <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[520px] z-50">
+      <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[520px] z-10">
         <Link href="/download/GGPOKER">
           <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6 cursor-pointer">
             <Image
@@ -148,14 +148,16 @@ const Hero: React.FC = () => {
             </h3>
           </div>
         </Scroll>
+        <div className="col-span-2 flex flex-col items-center lg:hidden place-content-center">
+          <Scroll to="footer" smooth>
+            <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
+              scroll down
+            </span>
+          </Scroll>
+        </div>
       </div>
 
       {/* scroll down button */}
-      <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center lg:hidden place-content-center">
-        <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
-          scroll down
-        </span>
-      </div>
     </section>
   )
 }

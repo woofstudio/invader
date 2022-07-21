@@ -7,13 +7,10 @@ import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import { useRouter } from 'next/router'
 import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
-const regex: RegExp = /\/download\/[A-Z]+/g
-
 export const Navigation: React.FC = () => {
   const { events, back, pathname } = useRouter()
   const [show, setShow] = useState(false)
   const [showApps, setShowApps] = useState(false)
-  const [isDownloadScreen, setIsDownloadScreen] = useState(regex.test(pathname))
 
   useEffect(() => {
     if (show) {
@@ -22,11 +19,6 @@ export const Navigation: React.FC = () => {
       document.body.style.overflow = 'unset'
     }
   }, [show])
-
-  useEffect(() => {
-    setIsDownloadScreen(regex.test(pathname))
-    console.log('pathname', regex.test(pathname))
-  }, [pathname])
 
   const openSidebar = useCallback(() => {
     setShow(true)
@@ -72,7 +64,9 @@ export const Navigation: React.FC = () => {
         )}
         <p
           className={`underline underline-offset-2 cursor-pointer ${
-            isDownloadScreen ? 'block sm:hidden' : 'hidden'
+            pathname.substring(1, 9) === 'download'
+              ? 'block sm:hidden'
+              : 'hidden'
           }`}
           onClick={openAppBar}
         >
@@ -80,7 +74,9 @@ export const Navigation: React.FC = () => {
         </p>
         <div
           className={`cursor-pointer ${
-            isDownloadScreen ? 'invisible sm:visible' : 'block'
+            pathname.substring(1, 9) === 'download'
+              ? 'invisible sm:visible'
+              : 'block'
           }`}
           onClick={openSidebar}
         >

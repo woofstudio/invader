@@ -9,7 +9,10 @@ import IvdLogoName from '../../../public/ivd-logo-name.png'
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0">
+    <footer
+      id="footer"
+      className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0"
+    >
       <a
         href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2"
         className="2xl:hidden block"
