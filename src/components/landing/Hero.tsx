@@ -83,9 +83,14 @@ const Hero: React.FC = () => {
       <div className="hidden lg:block">
         <Image src={HeroImg} alt="hero" priority={true} quality={100} />
       </div>
+      <div className="absolute left-0 top-0 right-0 overflow-hidden w-full h-full">
+        <div className="absolute top-[30%] -right-36 -left-10 lg:hidden">
+          <Image src={HeroImg} alt="hero" priority={true} quality={100} />
+        </div>
+      </div>
 
       {/* hero links */}
-      <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[520px]">
+      <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[520px] z-50">
         <Link href="/download/GGPOKER">
           <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6 cursor-pointer">
             <Image
