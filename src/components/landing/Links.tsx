@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ReactNode } from 'react'
 import RegistrationImg from '../../../public/img/landing/links-registration-img.png'
 
@@ -19,11 +20,7 @@ const Links: React.FC = () => {
         โป๊กเกอร์
       </h1>
       <div className="grid grid-cols-4 gap-6">
-        <Link
-          onClick={() => {
-            router.push(`download/GGPOKER`)
-          }}
-        >
+        <LinkButton href="/download/GGPOKER">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             วิธีการสมัคร
           </h6>
@@ -40,53 +37,48 @@ const Links: React.FC = () => {
               priority={true}
             />
           </div>
-        </Link>
-        <Link
-          onClick={() => {
-            router.push(`promotion`)
-          }}
-        >
+        </LinkButton>
+        <LinkButton href="/promotion">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             โปรโมชั่น
           </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
           </div>
-        </Link>
-        <Link onClick={() => {}}>
+        </LinkButton>
+        <LinkButton href="/technique">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             เทคนิคการเล่น
           </h6>
           <div className="w-[28%] mt-[20%]">
             <Image src={TechniquesIcon} alt="tech" layout="responsive" />
           </div>
-        </Link>
-        <Link onClick={() => {}}>
+        </LinkButton>
+        <LinkButton href="/">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             Community
           </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={CommunityIcon} alt="community" layout="responsive" />
           </div>
-        </Link>
+        </LinkButton>
       </div>
     </section>
   )
 }
 
 interface LinkProps {
-  children: ReactNode
-  onClick: () => void
+  children: React.ReactNode
+  href: string
 }
 
-const Link: React.FC<LinkProps> = ({ children, onClick }) => {
+const LinkButton: React.FC<LinkProps> = ({ children, href }) => {
   return (
-    <div
-      className="bg-gradient-to-t from-primary-200 to-primary-300 aspect-square rounded-2xl 2xl:rounded-3xl overflow-hidden group relative p-6 2xl:px-10 2xl:py-8"
-      onClick={onClick}
-    >
-      {children}
-    </div>
+    <Link href={href}>
+      <div className="bg-gradient-to-t from-primary-200 to-primary-300 aspect-square rounded-2xl 2xl:rounded-3xl overflow-hidden group relative p-6 2xl:px-10 2xl:py-8 cursor-pointer">
+        {children}
+      </div>
+    </Link>
   )
 }
 
