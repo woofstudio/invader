@@ -2,6 +2,11 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
+import GGIcon from '../../../public/img/register/ggpoker.png'
+import BROSIcon from '../../../public/img/register/pokerbros.png'
+import PPIcon from '../../../public/img/register/pppoker.png'
+import UIcon from '../../../public/img/register/upoker.png'
+
 const RegistersData = [
   {
     title: (
@@ -19,7 +24,7 @@ const RegistersData = [
     path: '/download/GGPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_GG.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_GG.jpg')]",
-    iconCSS: '',
+    iconImage: GGIcon,
     downloadLink: '',
     color: '#EA232B',
   },
@@ -39,7 +44,7 @@ const RegistersData = [
     path: '/download/PPPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_PP.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_PP.jpg')]",
-    iconCSS: '',
+    iconImage: PPIcon,
     downloadLink: '',
     color: '#2AD16D',
   },
@@ -59,7 +64,7 @@ const RegistersData = [
     path: '/download/UPOKER',
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_U.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_U.jpg')]",
-    iconCSS: '',
+    iconImage: UIcon,
     downloadLink: '',
     color: '#FFB339',
   },
@@ -81,7 +86,7 @@ const RegistersData = [
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_BROS.jpg')]",
     bgMobileCoverCSS:
       "bg-[url('/img/register/mobile_register-banner_BROS.jpg')]",
-    iconCSS: '',
+    iconImage: BROSIcon,
     downloadLink: '',
     color: '#5D3B8C',
   },
@@ -191,6 +196,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </div>
       </div>
+
+      {RegistersData.map((data, idx) => {
+        if (router.pathname === data.path) {
+          return (
+            <div className="sm:hidden absolute z-50 top-12 right-12 w-16">
+              <Image src={data.iconImage} priority />
+            </div>
+          )
+        }
+      })}
     </div>
   )
 }
@@ -219,6 +234,7 @@ const MenuLink: React.FC<MenuLinkProps> = ({
         <Image
           src={active ? activeImageLink : imageLink}
           alt={title}
+          priority
           layout="fill"
         />
       </div>
