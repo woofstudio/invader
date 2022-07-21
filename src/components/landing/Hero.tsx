@@ -19,8 +19,8 @@ const Hero: React.FC = () => {
       id="hero"
       className="min-h-screen md:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
     >
-      <div className="space-y-8 z-20 relative">
-        <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-8xl max-w-lg">
+      <div className="space-y-8 z-20 relative md:pb-60">
+        <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-lg">
           Poker Invader
         </h2>
         <h3 className="font-kanit font-extralight tracking-widest md:text-2xl text-white">
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
 
         {/* play button */}
         <div
-          className="w-[48vw] h-40 rounded-xl overflow-hidden relative hidden md:block"
+          className="absolute w-80 2xl:w-[48vw] h-96 2xl:h-40 rounded-xl overflow-hidden hidden lg:block"
           onMouseLeave={() => setHover(false)}
         >
           <div
@@ -46,9 +46,9 @@ const Hero: React.FC = () => {
               Play Poker
             </p>
             <p
-              className={`absolute top-5 -left-5 ${
+              className={`absolute top-2 2xl:top-5 left-2 2xl:-left-5 ${
                 hover ? 'opacity-100' : 'opacity-0'
-              } duration-300 select-none pl-[4.6rem] pt-5`}
+              } duration-300 select-none pl-[4.6rem] pt-5 text-center 2xl:text-left`}
             >
               OUR
               <br /> PARTNERS
@@ -57,21 +57,21 @@ const Hero: React.FC = () => {
           <div
             className={`${
               hover ? 'opacity-100' : 'opacity-0'
-            } opacity-0 absolute -right-6 top-6 grid grid-cols-4 gap-6 pr-12 duration-300 z-10 cursor-pointer`}
+            } opacity-0 absolute left-12 2xl:left-auto 2xl:-right-6 bottom-8 2xl:bottom-auto 2xl:top-6 grid grid-cols-2 2xl:grid-cols-4 gap-6 pr-12 duration-300 z-10 cursor-pointer`}
           >
             {hover && (
               <>
                 <Link href="/download/GGPOKER">
-                  <div className="aspect-square bg-[url('/img/register/ggpoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square bg-[url('/img/register/ggpoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
                 <Link href="download/UPOKER">
-                  <div className="aspect-square bg-[url('/img/register/upoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square bg-[url('/img/register/upoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
                 <Link href="/download/PPPOKER">
-                  <div className="aspect-square bg-[url('/img/register/pppoker.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square bg-[url('/img/register/pppoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
                 <Link href="/download/POKERBROS">
-                  <div className="aspect-square bg-[url('/img/register/pokerbros.png')] bg-contain w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square bg-[url('/img/register/pokerbros.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
                 </Link>
               </>
             )}
