@@ -200,7 +200,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {RegistersData.map((data, idx) => {
         if (router.pathname === data.path) {
           return (
-            <div className="sm:hidden absolute z-50 top-12 right-12 w-16">
+            <div className="sm:hidden absolute z-50 top-12 right-6 w-16">
               <Image src={data.iconImage} priority />
             </div>
           )

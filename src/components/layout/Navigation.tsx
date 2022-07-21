@@ -63,7 +63,7 @@ export const Navigation: React.FC = () => {
           <BsChevronLeft size={40} color="#FFD261" onClick={back} />
         )}
         <p
-          className={`underline underline-offset-2 cursor-pointer ${
+          className={`underline underline-offset-2 cursor-pointer text-sm ${
             pathname.substring(1, 9) === 'download'
               ? 'block sm:hidden'
               : 'hidden'
