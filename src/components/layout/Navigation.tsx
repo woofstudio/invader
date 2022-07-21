@@ -54,7 +54,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-10">
+      <nav className="absolute top-0 w-full h-40 px-6 sm:px-12 md:px-14 flex items-center justify-between z-10">
         {pathname === '/' ? (
           <Link href="/">
             <Image src={IvdLogoColor} alt="Invader Logo" />
@@ -63,7 +63,7 @@ export const Navigation: React.FC = () => {
           <BsChevronLeft size={40} color="#FFD261" onClick={back} />
         )}
         <p
-          className={`underline underline-offset-2 cursor-pointer ${
+          className={`underline underline-offset-2 cursor-pointer text-sm ${
             pathname.substring(1, 9) === 'download'
               ? 'block sm:hidden'
               : 'hidden'
