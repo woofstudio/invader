@@ -8,13 +8,15 @@ const Community: React.FC = () => {
   return (
     <section
       id="community"
-      className="w-full px-8 md:px-12 py-20 lg:p-32 flex justify-between"
+      className="w-full px-8 md:px-12 pb-10 md:pb-0 md:py-20 lg:p-32 flex justify-between"
       style={{
         background: 'linear-gradient(155.04deg, #FACB48 3.36%, #FFFFFF 67.79%)',
       }}
     >
       <div className="space-y-10 relative w-full">
-        <Image src={IvdLogoBlack} alt="Invader Black Logo" />
+        <div className="hidden md:inline">
+          <Image src={IvdLogoBlack} alt="Invader Black Logo" />
+        </div>
         <h2 className="uppercase font-druk text-3xl sm:text-5xl md:text-7xl text-dark-400">
           Play Online
           <br />
