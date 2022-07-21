@@ -108,7 +108,7 @@ export const Navigation: React.FC = () => {
               <a className="link">โปรโมชั่น</a>
             </Link>
           </div>
-          <hr className="text-text-300" />
+          {  /*         <hr className="text-text-300" />
           <div className="flex flex-col">
             <Link href="/">
               <a className="link">
@@ -122,7 +122,7 @@ export const Navigation: React.FC = () => {
             <Link href="/">
               <a className="link">WHY POKER?</a>
             </Link>
-          </div>
+          </div> */}
           <hr className="text-text-300" />
           <div className="flex flex-col">
             <a href={FACEBOOK_PAGE} className="link">
