@@ -2,6 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Link as Scroll } from 'react-scroll'
 import RegistrationImg from '../../../public/img/landing/links-registration-img.png'
+import PromotionImg from '../../../public/img/landing/links-promotion-img.png'
+import TechniquesImg from '../../../public/img/landing/links-techniques-img.png'
+import CommunityImg from '../../../public/img/landing/links-community-img.png'
 
 import RegistrationIcon from '../../../public/img/landing/links-registration-icon.png'
 import PromotionsIcon from '../../../public/img/landing/links-promotions-icon.png'
@@ -43,6 +46,16 @@ const Links: React.FC = () => {
           <div className="w-[40%] mt-[20%]">
             <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
           </div>
+          <div className="absolute rotate-12 -bottom-[38%] xl:-bottom-[18%] -right-[21%] aspect-square w-[85%]">
+            <Image
+              src={PromotionImg}
+              alt="promotion"
+              className="group-hover:-rotate-12 duration-300"
+              layout="responsive"
+              quality={100}
+              priority={true}
+            />
+          </div>
         </LinkButton>
         <ScrollButton to="techniques" offset={-40}>
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
@@ -51,6 +64,16 @@ const Links: React.FC = () => {
           <div className="w-[28%] mt-[20%]">
             <Image src={TechniquesIcon} alt="tech" layout="responsive" />
           </div>
+          <div className="absolute rotate-12 -bottom-[90%] xl:-bottom-[70%] -right-[65%] aspect-square w-[160%] -rotate-10  hover:w-[170%] hover:-right-[80%] duration-300">
+            <Image
+              src={TechniquesImg}
+              alt="techniques"
+              className="group-hover:-rotate-45 duration-300"
+              layout="responsive"
+              quality={100}
+              priority={true}
+            />
+          </div>
         </ScrollButton>
         <ScrollButton to="community">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
@@ -58,6 +81,16 @@ const Links: React.FC = () => {
           </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={CommunityIcon} alt="community" layout="responsive" />
+          </div>
+          <div className="absolute rotate-12 -bottom-[55%] xl:-bottom-[35%] -right-[5%] aspect-square w-[70%] group-hover:-rotate-1 duration-300">
+            <Image
+              src={CommunityImg}
+              alt="community"
+              className=""
+              layout="responsive"
+              quality={100}
+              priority={true}
+            />
           </div>
         </ScrollButton>
       </div>
