@@ -66,7 +66,7 @@ const nextSiteMap = async (req: NextApiRequest, res: NextApiResponse) => {
     const paths = await getAllslug()
     paths.forEach((blog) => {
       links.push({
-        url: `/${blog.params.slug}`,
+        url: `article/${blog.params.slug}`,
         changefreq: 'daily',
         priority: 0.9,
       })
