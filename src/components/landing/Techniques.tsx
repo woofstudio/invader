@@ -75,62 +75,63 @@ const Techniques: React.FC = () => {
       </div>
 
       {/* mobile carousel */}
-      <Carousel
-        dragThreshold={0.1}
-        defaultControlsConfig={{
-          nextButtonClassName: 'hidden',
-          prevButtonClassName: 'hidden',
-          pagingDotsContainerClassName: 'space-x-2',
-          pagingDotsStyle: {
-            fill: '#FFBF00',
-          },
-        }}
-        autoplay
-        autoplayReverse
-        autoplayInterval={2000}
-        className="block lg:hidden"
-      >
-        <Link href="/">
-          <div className="h-[720px] bg-[url('/img/landing/techniques-newbie-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
-            <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6  xl mt-12">
-              Newbie
-              <br />
-              Tips
-            </h3>
-            <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="h-[720px] bg-[url('/img/landing/techniques-cash-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
-            <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6  xl mt-12">
-              Cash
-              <br />
-              Game
-            </h3>
-            <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="h-[720px] bg-[url('/img/landing/techniques-tournament-img.png')] bg-cover bg-right cursor-pointer relative flex flex-col justify-between items-center text-center">
-            <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6  xl mt-12">
-              MTT
-              <br />
-              Tournament
-            </h3>
-            <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-        <Link href="/">
-          <div className="h-[720px] bg-[url('/img/landing/techniques-101-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
-            <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6  xl mt-12">
-              Invader
-              <br />
-              101
-            </h3>
-            <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
-          </div>
-        </Link>
-      </Carousel>
+      <div className="block lg:hidden">
+        <Carousel
+          dragThreshold={0.1}
+          defaultControlsConfig={{
+            nextButtonClassName: 'hidden',
+            prevButtonClassName: 'hidden',
+            pagingDotsContainerClassName: 'space-x-2',
+            pagingDotsStyle: {
+              fill: '#FFBF00',
+            },
+          }}
+          autoplay
+          autoplayReverse
+          autoplayInterval={2000}
+        >
+          <Link href="/newbie">
+            <div className="h-[720px] bg-[url('/img/landing/techniques-newbie-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+                Newbie
+                <br />
+                Tips
+              </h3>
+              <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
+            </div>
+          </Link>
+          <Link href="/cash-game">
+            <div className="h-[720px] bg-[url('/img/landing/techniques-cash-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+                Cash
+                <br />
+                Game
+              </h3>
+              <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
+            </div>
+          </Link>
+          <Link href="/tournament">
+            <div className="h-[720px] bg-[url('/img/landing/techniques-tournament-img.png')] bg-cover bg-right cursor-pointer relative flex flex-col justify-between items-center text-center">
+              <h3 className="uppercase font-druk text-primary-100 text-3xl md:text-6xl mt-12">
+                <span className="text-6xl">MTT</span>
+                <br />
+                Tournament
+              </h3>
+              <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
+            </div>
+          </Link>
+          <Link href="/101">
+            <div className="h-[720px] bg-[url('/img/landing/techniques-101-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+                Invader
+                <br />
+                101
+              </h3>
+              <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
+            </div>
+          </Link>
+        </Carousel>
+      </div>
     </section>
   )
 }

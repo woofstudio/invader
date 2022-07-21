@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Link as Scroll } from 'react-scroll'
 import { FiChevronUp } from 'react-icons/fi'
 import { ImYoutube } from 'react-icons/im'
 import { IoLogoFacebook } from 'react-icons/io'
@@ -53,9 +54,13 @@ export const Footer: React.FC = () => {
 
       {/* scroll up for desktop and social media links */}
       <div className="flex items-center 2xl:space-x-20">
-        <div className="place-content-center rounded-full bg-primary-200 w-14 h-14 text-4xl cursor-pointer hidden 2xl:grid">
+        <Scroll
+          to="hero"
+          smooth
+          className="place-content-center rounded-full bg-primary-200 text-dark-200 w-14 h-14 text-4xl cursor-pointer hidden 2xl:grid"
+        >
           <FiChevronUp />
-        </div>
+        </Scroll>
         <div className="flex items-center text-white text-4xl space-x-6">
           <a href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2">
             <IoLogoFacebook />

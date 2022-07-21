@@ -5,16 +5,16 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="bg-dark-100 w-full px-12 lg:px-32 pt-24 pb-0 md:pb-32 flex flex-col-reverse md:flex-row justify-between items-center"
+      className="bg-dark-100 w-full px-12 lg:px-32 pt-24 pb-0 lg:pb-32 flex flex-col-reverse lg:flex-row justify-between items-center"
     >
-      <div className="flex-1 grid place-items-center mt-12 md:mt-0">
-        <div className="w-[50%]">
+      <div className="flex-1 grid place-items-center mt-12 lg:mt-0">
+        <div className="w-[50%] pb-20">
           <Image src={AboutImg} alt="finger" priority={true} quality={100} />
         </div>
       </div>
       <div className="flex-1 relative">
-        <div className="space-y-10 text-center md:text-left flex flex-col items-center md:items-start mb-20 md:mb-52">
-          <h4 className="uppercase font-druk text-7xl text-primary-200">
+        <div className="space-y-10 text-center lg:text-left flex flex-col items-center lg:items-start mb-20 lg:mb-52">
+          <h4 className="uppercase font-druk text-5xl md:text-6xl lg:text-7xl text-primary-200">
             We Are
             <br />
             Invader
@@ -27,7 +27,7 @@ const About: React.FC = () => {
             ที่เต็มไปด้วยปริศนา รอให้เหล่านักเล่นได้ค้นหา
           </p>
         </div>
-        <div className="space-y-10 text-center md:text-right flex flex-col items-center md:items-end">
+        <div className="space-y-10 text-center lg:text-right flex flex-col items-center lg:items-end">
           <p className="text-white font-kanit max-w-xl leading-loose text-lg">
             ห้อง <span className="font-druk">Poker</span> และเกมที่ดีที่สุด
             ของทุก <span className="font-druk">APPLICATION</span> อยู่ที่นี่
@@ -45,8 +45,8 @@ const About: React.FC = () => {
             ที่ <span className="font-druk">Las Vegas</span> ทุกๆปี
           </p>
         </div>
-        <div className="absolute top-0 -left-10 w-px h-[520px] bg-white hidden md:block"></div>
-        <div className="absolute bottom-0 -right-10 w-px h-[520px] bg-white hidden md:block"></div>
+        <div className="absolute top-0 -left-10 w-px h-[520px] bg-white hidden lg:inline"></div>
+        <div className="absolute bottom-0 -right-10 w-px h-[520px] bg-white hidden lg:inline"></div>
       </div>
     </section>
   )
