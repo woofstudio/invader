@@ -7,7 +7,7 @@ import { DISCORD, LINE } from '../../config'
 const Community: React.FC = () => {
   return (
     <section
-      id="commuinity"
+      id="community"
       className="w-full px-8 md:px-12 py-20 lg:p-32 flex justify-between"
       style={{
         background: 'linear-gradient(155.04deg, #FACB48 3.36%, #FFFFFF 67.79%)',

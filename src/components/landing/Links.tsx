@@ -44,22 +44,22 @@ const Links: React.FC = () => {
             <Image src={PromotionsIcon} alt="promotion" layout="responsive" />
           </div>
         </LinkButton>
-        <LinkButton href="/technique">
+        <ScrollButton to="techniques" offset={-40}>
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             เทคนิคการเล่น
           </h6>
           <div className="w-[28%] mt-[20%]">
             <Image src={TechniquesIcon} alt="tech" layout="responsive" />
           </div>
-        </LinkButton>
-        <LinkButton href="/">
+        </ScrollButton>
+        <ScrollButton to="community">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             Community
           </h6>
           <div className="w-[40%] mt-[20%]">
             <Image src={CommunityIcon} alt="community" layout="responsive" />
           </div>
-        </LinkButton>
+        </ScrollButton>
       </div>
     </section>
   )
@@ -77,6 +77,22 @@ const LinkButton: React.FC<LinkProps> = ({ children, href }) => {
         {children}
       </div>
     </Link>
+  )
+}
+
+interface ScrollProps {
+  children: React.ReactNode
+  to: string
+  offset?: number
+}
+
+const ScrollButton: React.FC<ScrollProps> = ({ children, to, offset = 0 }) => {
+  return (
+    <Scroll to={to} smooth offset={offset}>
+      <div className="bg-gradient-to-t from-primary-200 to-primary-300 aspect-square rounded-2xl 2xl:rounded-3xl overflow-hidden group relative p-6 2xl:px-10 2xl:py-8 cursor-pointer">
+        {children}
+      </div>
+    </Scroll>
   )
 }
 
