@@ -90,7 +90,7 @@ const Techniques: React.FC = () => {
           autoplayReverse
           autoplayInterval={2000}
         >
-          <Link href="/">
+          <Link href="/newbie">
             <div className="h-[720px] bg-[url('/img/landing/techniques-newbie-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
               <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
                 Newbie
@@ -100,7 +100,7 @@ const Techniques: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
-          <Link href="/">
+          <Link href="/cash-game">
             <div className="h-[720px] bg-[url('/img/landing/techniques-cash-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
               <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
                 Cash
@@ -110,7 +110,7 @@ const Techniques: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
-          <Link href="/">
+          <Link href="/tournament">
             <div className="h-[720px] bg-[url('/img/landing/techniques-tournament-img.png')] bg-cover bg-right cursor-pointer relative flex flex-col justify-between items-center text-center">
               <h3 className="uppercase font-druk text-primary-100 text-3xl md:text-6xl mt-12">
                 <span className="text-6xl">MTT</span>
@@ -120,7 +120,7 @@ const Techniques: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
-          <Link href="/">
+          <Link href="/101">
             <div className="h-[720px] bg-[url('/img/landing/techniques-101-img.png')] bg-cover bg-center cursor-pointer relative flex flex-col justify-between items-center text-center">
               <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
                 Invader
