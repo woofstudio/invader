@@ -13,16 +13,10 @@ export const Footer: React.FC = () => {
       id="footer"
       className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0"
     >
-      <a
-        href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2"
-        className="2xl:hidden block"
-      >
+      <a href="/" className="2xl:hidden block">
         <Image src={IvdLogoColor} alt="logo-color" layout="fixed" />
       </a>
-      <a
-        href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2"
-        className="hidden 2xl:block"
-      >
+      <a href="/" className="hidden 2xl:block">
         <Image src={IvdLogoName} alt="logo-name" />
       </a>
 
