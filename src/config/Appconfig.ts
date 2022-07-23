@@ -15,6 +15,8 @@ export const YOUTUBE_CHANNEL = 'https://www.youtube.com/watch?v=HLgP5TXCZtM'
 
 export const YOUTUBE_CLIP = 'https://www.youtube.com/embed/rokGy0huYEA'
 
+export const LINE_AD = 'https://lin.ee/AX4Xb0O'
+
 export const metaConfig = {
   index: {
     title: '',

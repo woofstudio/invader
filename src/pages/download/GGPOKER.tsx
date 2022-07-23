@@ -5,7 +5,7 @@ import Step from '../../components/register/Step'
 import Step1 from '../../../public/img/register/ggpoker-step-1.png'
 import Step2 from '../../../public/img/register/ggpoker-step-2.png'
 import Step3 from '../../../public/img/register/ggpoker-step-3.png'
-import { Meta, metaConfig } from '../../config'
+import { LINE_AD, Meta, metaConfig } from '../../config'
 
 const steps = [
   {
@@ -39,7 +39,17 @@ const GGPOKER: NextPage = () => {
         description={metaConfig.download.ggpoker.description}
       />
       {steps.map((data, idx) => (
-        <Step text={data.text} key={idx} image={data.image} idx={idx} />
+        <Step
+          text={data.text}
+          key={idx}
+          image={data.image}
+          idx={idx}
+          link={
+            idx == 0
+              ? 'https://download.good-game-network.com/mobile-page-customer/ggpoker/th'
+              : LINE_AD
+          }
+        />
       ))}
     </Layout>
   )

@@ -8,7 +8,7 @@ import Step3 from '../../../public/img/register/pokerbros-step-3.png'
 import Step4 from '../../../public/img/register/pokerbros-step-4.png'
 import Step5 from '../../../public/img/register/pokerbros-step-5.png'
 import Step6 from '../../../public/img/register/pokerbros-step-6.png'
-import { Meta, metaConfig } from '../../config'
+import { LINE_AD, Meta, metaConfig } from '../../config'
 
 const steps = [
   {
@@ -76,7 +76,13 @@ const POKERBROS: NextPage = () => {
         description={metaConfig.download.pokerbros.description}
       />
       {steps.map((data, idx) => (
-        <Step text={data.text} key={idx} image={data.image} idx={idx} />
+        <Step
+          text={data.text}
+          key={idx}
+          image={data.image}
+          idx={idx}
+          link={idx == 0 ? 'https://pokerbros.net/' : LINE_AD}
+        />
       ))}
     </Layout>
   )

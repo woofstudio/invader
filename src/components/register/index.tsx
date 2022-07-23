@@ -25,7 +25,8 @@ const RegistersData = [
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_GG.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_GG.jpg')]",
     iconImage: GGIcon,
-    downloadLink: '',
+    downloadLink:
+      'https://download.good-game-network.com/mobile-page-customer/ggpoker/th',
     color: '#EA232B',
   },
   {
@@ -45,7 +46,7 @@ const RegistersData = [
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_PP.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_PP.jpg')]",
     iconImage: PPIcon,
-    downloadLink: '',
+    downloadLink: 'https://pppoker.net/',
     color: '#2AD16D',
   },
   {
@@ -65,7 +66,7 @@ const RegistersData = [
     bgCoverCSS: "xl:bg-[url('/img/register/desktop_register-banner_U.jpg')]",
     bgMobileCoverCSS: "bg-[url('/img/register/mobile_register-banner_U.jpg')]",
     iconImage: UIcon,
-    downloadLink: '',
+    downloadLink: 'https://upoker.net/',
     color: '#FFB339',
   },
   {
@@ -87,7 +88,7 @@ const RegistersData = [
     bgMobileCoverCSS:
       "bg-[url('/img/register/mobile_register-banner_BROS.jpg')]",
     iconImage: BROSIcon,
-    downloadLink: '',
+    downloadLink: 'https://pokerbros.net/',
     color: '#5D3B8C',
   },
 ]
