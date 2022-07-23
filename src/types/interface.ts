@@ -47,3 +47,4 @@ export interface IPromotion {
   prize: string
   promotionImage: string
 }
+
