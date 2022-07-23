@@ -81,7 +81,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20">
         {/* heading & background */}
         <div
-          className={`w-full h-[65vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-80 lg:pt-40 ${
+          className={`w-full h-[65vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-[36%] lg:pt-40 ${
             router.pathname === TechniquesData[0].path &&
             TechniquesData[0].bgCoverCSS +
               ' ' +

@@ -122,8 +122,8 @@ export const Navigation: React.FC = () => {
             <Link href="/">
               <a className="link">WHY POKER?</a>
             </Link>
-          </div>
-          <hr className="text-text-300" /> */}
+          </div> */}
+          <hr className="text-text-300" />
           <div className="flex flex-col">
             <a href={FACEBOOK_PAGE} className="link">
               FACEBOOK
