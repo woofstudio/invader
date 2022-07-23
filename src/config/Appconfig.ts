@@ -11,9 +11,10 @@ export const LINE = 'https://bit.ly/Pokerinvader'
 
 export const DISCORD = 'https://discord.gg/4UmWD3Gref'
 
-export const YOUTUBE_CHANNEL = 'https://www.youtube.com/watch?v=HLgP5TXCZtM'
+export const YOUTUBE_CHANNEL =
+  'https://youtube.com/channel/UCCIEIg_fsWbPCXful2czSww'
 
-export const YOUTUBE_CLIP = 'https://www.youtube.com/embed/rokGy0huYEA'
+export const YOUTUBE_CLIP = 'https://www.youtube.com/embed/AzrtPoD0Lro'
 
 export const LINE_AD = 'https://lin.ee/AX4Xb0O'
 

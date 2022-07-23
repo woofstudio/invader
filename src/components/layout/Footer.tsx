@@ -6,6 +6,7 @@ import { ImYoutube } from 'react-icons/im'
 import { IoLogoFacebook } from 'react-icons/io'
 import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import IvdLogoName from '../../../public/ivd-logo-name.png'
+import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
 export const Footer: React.FC = () => {
   return (
@@ -59,10 +60,10 @@ export const Footer: React.FC = () => {
           <FiChevronUp />
         </Scroll>
         <div className="flex items-center text-white text-4xl space-x-6">
-          <a href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2">
+          <a href={FACEBOOK_PAGE}>
             <IoLogoFacebook />
           </a>
-          <a href="https://www.figma.com/file/6evEOnxPg95YPf3w0CkzjO/Web-Test?node-id=8%3A2">
+          <a href={YOUTUBE_CHANNEL}>
             <ImYoutube />
           </a>
         </div>
