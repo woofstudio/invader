@@ -11,10 +11,10 @@ export const FanPage = () => {
   return (
     <section
       id="fanpage"
-      className="bg-[url('/img/article/fanpage-mobile.png')] h-[900px] sm:bg-[url('/img/article/fanpage.png')] sm:h-[500px] bg-cover bg-no-repeat section-space-x py-40"
+      className="bg-[url('/img/article/fanpage-mobile.png')] h-[900px] sm:bg-[url('/img/article/fanpage.png')] sm:h-[60vh] bg-cover bg-center bg-no-repeat section-space-x py-40 flex justify-center items-center"
     >
-      <div className="space-y-11 text-center flex flex-col items-center sm:items-start">
-        <h3 className="font-bold font-druk text-3xl text-primary-200 w-60">
+      <div className="space-y-11 text-center flex flex-col items-center sm:items-start w-full max-w-screen-2xl">
+        <h3 className="font-bold font-druk text-3xl md:text-5xl text-primary-200 md:w-96 text-left">
           VISIT OUR FANPAGE
         </h3>
         <button

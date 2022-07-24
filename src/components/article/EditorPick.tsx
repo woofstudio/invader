@@ -20,149 +20,153 @@ export const EditorPick = ({ editorPreviews }: Props) => {
   return (
     <section
       id="editor pick"
-      className="w-full md:section-space-x bg-dark-100 md:space-y-11 md:space-from-nav pb-20 max-width"
+      className="md:section-space-x bg-dark-100 md:space-from-nav pb-20"
     >
-      <h1 className="text-primary-200 hidden md:block text-2xl font-bold font-druk">
-        {"EDITOR'S PICK"}
-      </h1>
-      <div className="flex flex-col-reverse md:flex-col xl:space-x-20 md:space-y-8 xl:space-y-0 xl:flex-row">
-        <div className="flex-1 px-10 md:px-0">
-          <h1 className="text-primary-200 my-5 underline md:hidden block text-lg font-bold font-druk">
-            {"EDITOR'S PICK"}
-          </h1>
-          <div
-            className="w-full md:w-[680px] h-60 md:h-[430px] relative"
-            onClick={() => {
-              router.push(`article/${highlight.slug}`)
-            }}
-          >
+      <div className="max-width md:space-y-11">
+        <h1 className="text-primary-200 hidden md:block text-2xl font-bold font-druk underline">
+          {"EDITOR'S PICK"}
+        </h1>
+        <div className="flex flex-col-reverse md:flex-col xl:space-x-20 md:space-y-8 xl:space-y-0 xl:flex-row">
+          <div className="flex-1 px-10 md:px-0">
+            <h1 className="text-primary-200 my-5 underline md:hidden block text-lg font-bold font-druk">
+              {"EDITOR'S PICK"}
+            </h1>
             <div
-              className="w-full hidden md:block absolute h-full z-10"
-              style={{
-                background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
-              }}
-            />
-            <Image
-              src={urlFor(highlight.previewImage).url()}
-              alt={highlight.title}
-              layout="fill"
-              objectFit="cover"
-            />
-            <div className="absolute w-80 hidden md:block p-5 left-0 z-20 bottom-0">
-              <p className="text-xl font-semibold">{highlight.title}</p>
-              <div className="flex items-center space-x-2">
-                <TbClock />
-                <p className="text-base font-light">
-                  {moment(new Date(highlight.publishedAt)).format(
-                    'DD MMMM YYYY',
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="block md:hidden space-y-5 mt-5 mb-8">
-            <h4 className="text-xl font-semibold">{highlight.title}</h4>
-            <div className="flex gap-2">
-              {highlight.categories.map((category) => {
-                if (category.title !== 'EDITOR') {
-                  return (
-                    <p key={category.title} className="tag">
-                      {category.title}
-                    </p>
-                  )
-                }
-              })}
-            </div>
-
-            {/* need description */}
-            <p className="text-sm font-light line-clamp-3">
-              {highlight.description}
-            </p>
-          </div>
-          <div className="flex cursor-pointer underline justify-end md:hidden">
-            <Link href={`/article/${highlight.slug}`}>
-              <a>{'READ MORE >'}</a>
-            </Link>
-          </div>
-        </div>
-        <div className="flex-1 space-y-6 hidden md:block">
-          {editorPreviews.slice(1).map((elem, index) => (
-            <div
-              className="flex space-x-5"
-              key={index}
+              className="w-full md:w-[680px] h-60 md:h-[430px] relative"
               onClick={() => {
-                router.push(`article/${elem.slug}`)
+                router.push(`article/${highlight.slug}`)
               }}
             >
-              <div className="w-48 h-32 relative rounded-xl overflow-hidden">
-                <Image
-                  src={urlFor(elem.previewImage).url()}
-                  alt={elem.title}
-                  layout="fill"
-                  priority={true}
-                />
-              </div>
-              <div className="space-y-2 w-72">
-                <p className="text-xl font-semibold line-clamp-3">
-                  {elem.title}
-                </p>
-                <p className="text-sm font-light">
-                  {moment(new Date(elem.publishedAt)).format('DD MMMM YYYY')}
-                </p>
+              <div
+                className="w-full hidden md:block absolute h-full z-10"
+                style={{
+                  background:
+                    'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
+                }}
+              />
+              <Image
+                src={urlFor(highlight.previewImage).url()}
+                alt={highlight.title}
+                layout="fill"
+                objectFit="cover"
+              />
+              <div className="absolute w-80 hidden md:block p-5 left-0 z-20 bottom-0">
+                <p className="text-xl font-semibold">{highlight.title}</p>
+                <div className="flex items-center space-x-2">
+                  <TbClock />
+                  <p className="text-base font-light">
+                    {moment(new Date(highlight.publishedAt)).format(
+                      'DD MMMM YYYY',
+                    )}
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-        <div className="block md:hidden">
-          <Carousel
-            dragThreshold={0.1}
-            defaultControlsConfig={{
-              nextButtonClassName: 'hidden',
-              prevButtonClassName: 'hidden',
-              pagingDotsContainerClassName: 'space-x-2',
-              pagingDotsStyle: {
-                fill: '#FFBF00',
-              },
-            }}
-            autoplay
-            autoplayReverse
-            autoplayInterval={2000}
-            className="block lg:hidden"
-          >
+            <div className="block md:hidden space-y-5 mt-5 mb-8">
+              <h4 className="text-xl font-semibold">{highlight.title}</h4>
+              <div className="flex gap-2">
+                {highlight.categories.map((category) => {
+                  if (category.title !== 'EDITOR') {
+                    return (
+                      <p key={category.title} className="tag">
+                        {category.title}
+                      </p>
+                    )
+                  }
+                })}
+              </div>
+
+              {/* need description */}
+              <p className="text-sm font-light line-clamp-3">
+                {highlight.description}
+              </p>
+            </div>
+            <div className="flex cursor-pointer underline justify-end md:hidden">
+              <Link href={`/article/${highlight.slug}`}>
+                <a>{'READ MORE >'}</a>
+              </Link>
+            </div>
+          </div>
+          <div className="flex-1 space-y-6 hidden md:block">
             {editorPreviews.slice(1).map((elem, index) => (
               <div
+                className="flex space-x-5"
                 key={index}
-                className="relative w-full h-screen"
                 onClick={() => {
                   router.push(`article/${elem.slug}`)
                 }}
               >
-                <div
-                  className="w-full absolute h-full z-10"
-                  style={{
-                    background:
-                      'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
-                  }}
-                />
-                <Image
-                  src={urlFor(elem.previewMobileImage).url()}
-                  alt={elem.title}
-                  layout="fill"
-                  objectFit="cover"
-                  priority={true}
-                />
-                <div className="absolute w-80 left-8 px-4 bottom-20 border-l-4 z-20 border-primary-200">
-                  <p className="text-base font-druk font-semibold text-primary-200">
+                <div className="w-48 h-32 relative rounded-xl overflow-hidden">
+                  <Image
+                    src={urlFor(elem.previewImage).url()}
+                    alt={elem.title}
+                    layout="fill"
+                    priority={true}
+                  />
+                </div>
+                <div className="space-y-2 w-72">
+                  <p className="text-xl font-semibold line-clamp-3">
                     {elem.title}
                   </p>
-                  <p className="text-base italic">
+                  <p className="text-sm font-light">
                     {moment(new Date(elem.publishedAt)).format('DD MMMM YYYY')}
                   </p>
                 </div>
               </div>
             ))}
-          </Carousel>
+          </div>
+          <div className="block md:hidden">
+            <Carousel
+              dragThreshold={0.1}
+              defaultControlsConfig={{
+                nextButtonClassName: 'hidden',
+                prevButtonClassName: 'hidden',
+                pagingDotsContainerClassName: 'space-x-2',
+                pagingDotsStyle: {
+                  fill: '#FFBF00',
+                },
+              }}
+              autoplay
+              autoplayReverse
+              autoplayInterval={2000}
+              className="block lg:hidden"
+            >
+              {editorPreviews.slice(1).map((elem, index) => (
+                <div
+                  key={index}
+                  className="relative w-full h-screen"
+                  onClick={() => {
+                    router.push(`article/${elem.slug}`)
+                  }}
+                >
+                  <div
+                    className="w-full absolute h-full z-10"
+                    style={{
+                      background:
+                        'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.74) 100%)',
+                    }}
+                  />
+                  <Image
+                    src={urlFor(elem.previewMobileImage).url()}
+                    alt={elem.title}
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                  />
+                  <div className="absolute w-80 left-8 px-4 bottom-20 border-l-4 z-20 border-primary-200">
+                    <p className="text-base font-druk font-semibold text-primary-200">
+                      {elem.title}
+                    </p>
+                    <p className="text-base italic">
+                      {moment(new Date(elem.publishedAt)).format(
+                        'DD MMMM YYYY',
+                      )}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
       </div>
     </section>

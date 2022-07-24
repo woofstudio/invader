@@ -20,7 +20,7 @@ const Articles: NextPage<Props> = ({
   categoryPreviews,
 }: Props) => {
   return (
-    <div>
+    <>
       <EditorPick editorPreviews={editorPreviews} />
       <Catagories
         categoryPreviews={categoryPreviews}
@@ -28,7 +28,7 @@ const Articles: NextPage<Props> = ({
       />
       <FanPage />
       <HighlightVideo />
-    </div>
+    </>
   )
 }
 
