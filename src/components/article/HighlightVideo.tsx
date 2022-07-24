@@ -18,8 +18,9 @@ export const HighlightVideo = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           title="Embedded youtube"
-          width={334}
-          height={216}
+          // width={334 * 2}
+          // height={216 * 2}
+          className="w-[334px] h-[216px] md:w-[668px] md:h-[432px]"
         />
       </div>
     </section>
