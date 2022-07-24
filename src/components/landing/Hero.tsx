@@ -17,9 +17,9 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="sm:min-h-screen md:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
+      className="sm:min-h-screen lg:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
     >
-      <div className="space-y-8 z-20 relative md:pb-60">
+      <div className="space-y-8 z-20 relative lg:pb-60">
         <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-lg">
           Poker Invader
         </h2>
@@ -148,13 +148,13 @@ const Hero: React.FC = () => {
             </h3>
           </div>
         </Scroll>
-        <div className="col-span-2 flex flex-col items-center lg:hidden place-content-center">
-          <Scroll to="footer" smooth>
-            <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
-              scroll down
-            </span>
-          </Scroll>
-        </div>
+      </div>
+      <div className="col-span-2 flex flex-col items-center lg:hidden place-content-center pt-6">
+        <Scroll to="footer" smooth>
+          <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
+            scroll down
+          </span>
+        </Scroll>
       </div>
 
       {/* scroll down button */}
