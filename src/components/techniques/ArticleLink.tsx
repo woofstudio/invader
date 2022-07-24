@@ -22,7 +22,7 @@ const ArticleLink: React.FC<ArticleLinkProps> = ({
       {/* divider */}
       <div className="bg-white h-px w-[80%] opacity-60 mt-4"></div>
       {/* article title */}
-      <h3 className="font-kanit font-medium text-lg text-white mt-10 mx-auto">
+      <h3 className="font-kanit font-medium text-lg text-white mt-4 lg:mt-6 2xl:mt-10 mx-auto text-center px-5">
         {article.title}
       </h3>
     </div>
