@@ -54,7 +54,10 @@ const Promotion: NextPage<Props> = ({
   const [nextMonthPrmotion, setNextMonthPrmotion] = useState([
     {
       month: monthPromotion.month < 11 ? monthPromotion.month + 1 : 1,
-      year: monthPromotion.year,
+      year:
+        monthPromotion.month < 11
+          ? monthPromotion.year
+          : monthPromotion.year + 1,
     },
   ])
 
