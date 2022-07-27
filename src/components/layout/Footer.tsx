@@ -60,10 +60,10 @@ export const Footer: React.FC = () => {
           <FiChevronUp />
         </Scroll>
         <div className="flex items-center text-white text-4xl space-x-6">
-          <a href={FACEBOOK_PAGE}>
+          <a href={FACEBOOK_PAGE} target="_blank" rel="noreferrer">
             <IoLogoFacebook />
           </a>
-          <a href={YOUTUBE_CHANNEL}>
+          <a href={YOUTUBE_CHANNEL} target="_blank" rel="noreferrer">
             <ImYoutube />
           </a>
         </div>
