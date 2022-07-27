@@ -20,7 +20,6 @@ export interface IBlog {
 
 export type IMonth = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11
 
-
 export const mapMonth: { [key: number]: string } = {
   0: 'มกราคม',
   1: 'กุมภาพันธ์',
