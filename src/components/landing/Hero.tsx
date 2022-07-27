@@ -3,6 +3,11 @@ import Link from 'next/link'
 import { Link as Scroll } from 'react-scroll'
 import HeroImg from '../../../public/img/landing/hero-img.png'
 
+import GgpokerIcon from '../../../public/img/register/ggpoker.png'
+import UpokerIcon from '../../../public/img/register/upoker.png'
+import PppokerIcon from '../../../public/img/register/pppoker.png'
+import PokerbrosIcon from '../../../public/img/register/pokerbros.png'
+
 import RegistrationIcon from '../../../public/img/landing/hero-registration-icon.png'
 import PromotionsIcon from '../../../public/img/landing/hero-promotions-icon.png'
 import TechniquesIcon from '../../../public/img/landing/hero-techniques-icon.png'
@@ -62,16 +67,48 @@ const Hero: React.FC = () => {
             {hover && (
               <>
                 <Link href="/download/GGPOKER">
-                  <div className="aspect-square bg-[url('/img/register/ggpoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
+                    <Image
+                      src={GgpokerIcon}
+                      alt={'ggpoker'}
+                      priority={true}
+                      quality={100}
+                      layout="fill"
+                    />
+                  </div>
                 </Link>
                 <Link href="download/UPOKER">
-                  <div className="aspect-square bg-[url('/img/register/upoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
+                    <Image
+                      src={UpokerIcon}
+                      alt={'upoker'}
+                      priority={true}
+                      quality={100}
+                      layout="fill"
+                    />
+                  </div>
                 </Link>
                 <Link href="/download/PPPOKER">
-                  <div className="aspect-square bg-[url('/img/register/pppoker.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
+                    <Image
+                      src={PppokerIcon}
+                      alt={'pppoker'}
+                      priority={true}
+                      quality={100}
+                      layout="fill"
+                    />
+                  </div>
                 </Link>
                 <Link href="/download/POKERBROS">
-                  <div className="aspect-square bg-[url('/img/register/pokerbros.png')] bg-contain w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200"></div>
+                  <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
+                    <Image
+                      src={PokerbrosIcon}
+                      alt={'pokerbros'}
+                      priority={true}
+                      quality={100}
+                      layout="fill"
+                    />
+                  </div>
                 </Link>
               </>
             )}
