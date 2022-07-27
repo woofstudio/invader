@@ -14,12 +14,16 @@ export const Footer: React.FC = () => {
       id="footer"
       className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0"
     >
-      <a href="/" className="2xl:hidden block">
-        <Image src={IvdLogoColor} alt="logo-color" layout="fixed" />
-      </a>
-      <a href="/" className="hidden 2xl:block">
-        <Image src={IvdLogoName} alt="logo-name" />
-      </a>
+      <Link href="/" className="2xl:hidden block">
+        <a>
+          <Image src={IvdLogoColor} alt="logo-color" layout="fixed" />
+        </a>
+      </Link>
+      <Link href="/" className="hidden 2xl:block">
+        <a>
+          <Image src={IvdLogoName} alt="logo-name" />
+        </a>
+      </Link>
 
       {/* mobile links */}
       <div className="2xl:hidden flex flex-col items-center text-white font-kanit text-lg font-medium tracking-wider space-y-6">
@@ -60,12 +64,16 @@ export const Footer: React.FC = () => {
           <FiChevronUp />
         </Scroll>
         <div className="flex items-center text-white text-4xl space-x-6">
-          <a href={FACEBOOK_PAGE} target="_blank" rel="noreferrer">
-            <IoLogoFacebook />
-          </a>
-          <a href={YOUTUBE_CHANNEL} target="_blank" rel="noreferrer">
-            <ImYoutube />
-          </a>
+          <Link href={FACEBOOK_PAGE} target="_blank" rel="noreferrer">
+            <a>
+              <IoLogoFacebook />
+            </a>
+          </Link>
+          <Link href={YOUTUBE_CHANNEL} target="_blank" rel="noreferrer">
+            <a>
+              <ImYoutube />
+            </a>
+          </Link>
         </div>
       </div>
 
