@@ -7,10 +7,13 @@ import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import { useRouter } from 'next/router'
 import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 
+const TECHNIQUE_PATH = ['101', 'cash-game', 'newbie', 'tournament']
+
 export const Navigation: React.FC = () => {
   const { events, back, pathname } = useRouter()
   const [show, setShow] = useState(false)
   const [showApps, setShowApps] = useState(false)
+  const [showTechniques, setShowTechniques] = useState(false)
 
   useEffect(() => {
     if (show) {
@@ -34,6 +37,13 @@ export const Navigation: React.FC = () => {
     setShowApps(false)
   }, [])
 
+  const openTechniqueBar = useCallback(() => {
+    setShowTechniques(true)
+  }, [])
+  const closeTechniqueBar = useCallback(() => {
+    setShowTechniques(false)
+  }, [])
+
   useEffect(() => {
     // subscribe to next/router event
     events.on('routeChangeStart', closeSidebar)
@@ -51,6 +61,15 @@ export const Navigation: React.FC = () => {
       events.off('routeChangeStart', closeAppBar)
     }
   }, [events, closeAppBar])
+
+  useEffect(() => {
+    // subscribe to next/router event
+    events.on('routeChangeStart', closeTechniqueBar)
+    return () => {
+      // unsubscribe to event on unmount to prevent memory leak
+      events.off('routeChangeStart', closeTechniqueBar)
+    }
+  }, [events, closeTechniqueBar])
 
   return (
     <>
@@ -72,9 +91,19 @@ export const Navigation: React.FC = () => {
         >
           TAP TO SEE OTHERS APP
         </p>
+        <p
+          className={`underline underline-offset-2 cursor-pointer text-sm ${
+            TECHNIQUE_PATH.includes(pathname.substring(1))
+              ? 'block sm:hidden'
+              : 'hidden'
+          }`}
+          onClick={openTechniqueBar}
+        >
+          TAP TO SEE OTHERS GUIDE
+        </p>
         <div
           className={`cursor-pointer rounded-full p-2 hover:bg-slate-700 ${
-            pathname.substring(1, 9) === 'download'
+            pathname.substring(1) in TECHNIQUE_PATH
               ? 'invisible sm:visible'
               : 'block'
           }`}
@@ -165,6 +194,43 @@ export const Navigation: React.FC = () => {
             <a className="uppercase font-druk font-bold text-3xl text-white">
               <span className="text-upoker">POKER</span>
               <span className="text-ggpoker">B</span>ROS
+            </a>
+          </Link>
+        </div>
+      </div>
+      <div
+        className={`fixed z-50 top-0 right-0 w-full h-screen transition-all duration-300 bg-black flex flex-col items-center justify-center ${
+          showTechniques ? 'translate-y-0' : '-translate-y-full'
+        } ease-in-out duration-150`}
+      >
+        <div
+          className="cursor-pointer absolute top-12"
+          onClick={closeTechniqueBar}
+        >
+          <BsXLg color="#FFFFF" size={30} />
+        </div>
+        <div className="flex flex-col space-y-16 items-center">
+          <Link href="/newbie">
+            <a className="uppercase font-druk font-bold text-3xl text-primary-200">
+              NEWBIE TIPS
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/cash-game">
+            <a className="uppercase font-druk font-bold text-3xl text-primary-200">
+              CASH GAME
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/tournament">
+            <a className="uppercase font-druk font-bold text-3xl text-primary-200">
+              TOURNAMENT
+            </a>
+          </Link>
+          <hr className="w-full border-white" />
+          <Link href="/101">
+            <a className="uppercase font-druk font-bold text-3xl text-primary-200">
+              INVADER:101
             </a>
           </Link>
         </div>
