@@ -46,17 +46,12 @@ const Community: React.FC = () => {
         </div>
         <div className="absolute overflow-hidden bottom-0 top-0 -left-8 -right-8">
           <div className="absolute md:hidden bottom-40 -right-16 w-96">
-            <Image
-              src={CommunityImg}
-              alt="commu"
-              priority={true}
-              quality={100}
-            />
+            <Image src={CommunityImg} alt="commu" priority={true} />
           </div>
         </div>
       </div>
       <div className="md:flex flex-col justify-end hidden -ml-72 lg:-ml-48">
-        <Image src={CommunityImg} alt="commu" priority={true} quality={100} />
+        <Image src={CommunityImg} alt="commu" priority={true} />
       </div>
     </section>
   )

@@ -25,13 +25,7 @@ const Techniques: React.FC = () => {
       <div className="hidden lg:grid grid-cols-4 gap-6">
         <Link href="/newbie">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
-            <Image
-              src={NewbieImg}
-              alt={'newbie'}
-              priority={true}
-              quality={100}
-              layout="fill"
-            />
+            <Image src={NewbieImg} alt={'newbie'} layout="fill" />
             <h3 className="uppercase font-druk text-primary-100 lg:text-3xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
               Newbie
               <br />
@@ -45,13 +39,7 @@ const Techniques: React.FC = () => {
         </Link>
         <Link href="/cash-game">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
-            <Image
-              src={CashImg}
-              alt={'cash'}
-              priority={true}
-              quality={100}
-              layout="fill"
-            />
+            <Image src={CashImg} alt={'cash'} layout="fill" />
             <h3 className="uppercase font-druk text-primary-100 lg:text-4xl xl:text-5xl 2xl:text-6xl mt-12 z-20">
               Cash
               <br />
@@ -65,13 +53,7 @@ const Techniques: React.FC = () => {
         </Link>
         <Link href="/tournament">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
-            <Image
-              src={TournamentImg}
-              alt={'tournament'}
-              priority={true}
-              quality={100}
-              layout="fill"
-            />
+            <Image src={TournamentImg} alt={'tournament'} layout="fill" />
             <h3 className="uppercase font-druk text-primary-100 lg:text-5xl 2xl:text-6xl mt-12 z-20">
               MTT
               <br />
@@ -87,13 +69,7 @@ const Techniques: React.FC = () => {
         </Link>
         <Link href="/101">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
-            <Image
-              src={Invader101Img}
-              alt={'invader101'}
-              priority={true}
-              quality={100}
-              layout="fill"
-            />
+            <Image src={Invader101Img} alt={'invader101'} layout="fill" />
             <h3 className="uppercase font-druk text-primary-100 lg:text-2xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
               Invader
               <br />
@@ -129,7 +105,6 @@ const Techniques: React.FC = () => {
                 src={NewbieImg}
                 alt={'newbie'}
                 priority={true}
-                quality={100}
                 layout="fill"
                 className="-z-10"
               />
@@ -147,7 +122,6 @@ const Techniques: React.FC = () => {
                 src={CashImg}
                 alt={'cash'}
                 priority={true}
-                quality={100}
                 layout="fill"
                 className="-z-10"
               />
@@ -165,7 +139,6 @@ const Techniques: React.FC = () => {
                 src={TournamentImg}
                 alt={'tournament'}
                 priority={true}
-                quality={100}
                 layout="fill"
                 className="-z-10"
               />
@@ -183,7 +156,6 @@ const Techniques: React.FC = () => {
                 src={Invader101Img}
                 alt={'invader101'}
                 priority={true}
-                quality={100}
                 layout="fill"
                 className="-z-10"
               />

@@ -73,7 +73,7 @@ export const Navigation: React.FC = () => {
           TAP TO SEE OTHERS APP
         </p>
         <div
-          className={`cursor-pointer ${
+          className={`cursor-pointer rounded-full p-2 hover:bg-slate-700 ${
             pathname.substring(1, 9) === 'download'
               ? 'invisible sm:visible'
               : 'block'

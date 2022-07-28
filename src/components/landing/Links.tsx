@@ -34,8 +34,6 @@ const Links: React.FC = () => {
               alt="register"
               className="group-hover:-rotate-12 duration-300"
               layout="responsive"
-              quality={100}
-              priority={true}
             />
           </div>
         </LinkButton>
@@ -52,8 +50,6 @@ const Links: React.FC = () => {
               alt="promotion"
               className="group-hover:-rotate-12 duration-300"
               layout="responsive"
-              quality={100}
-              priority={true}
             />
           </div>
         </LinkButton>
@@ -70,8 +66,6 @@ const Links: React.FC = () => {
               alt="techniques"
               className="group-hover:-rotate-45 duration-300"
               layout="responsive"
-              quality={100}
-              priority={true}
             />
           </div>
         </ScrollButton>
@@ -88,8 +82,6 @@ const Links: React.FC = () => {
               alt="community"
               className=""
               layout="responsive"
-              quality={100}
-              priority={true}
             />
           </div>
         </ScrollButton>

@@ -9,7 +9,7 @@ const About: React.FC = () => {
     >
       <div className="flex-1 grid place-items-center mt-12 lg:mt-0">
         <div className="w-[50%] pb-20">
-          <Image src={AboutImg} alt="finger" priority={true} quality={100} />
+          <Image src={AboutImg} alt="finger" priority={true} />
         </div>
       </div>
       <div className="flex-1 relative">
