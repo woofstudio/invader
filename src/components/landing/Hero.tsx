@@ -68,35 +68,17 @@ const Hero: React.FC = () => {
               <>
                 <Link href="/download/GGPOKER">
                   <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
-                    <Image
-                      src={GgpokerIcon}
-                      alt={'ggpoker'}
-                      priority={true}
-                      quality={100}
-                      layout="fill"
-                    />
+                    <Image src={GgpokerIcon} alt={'ggpoker'} layout="fill" />
                   </div>
                 </Link>
                 <Link href="download/UPOKER">
                   <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
-                    <Image
-                      src={UpokerIcon}
-                      alt={'upoker'}
-                      priority={true}
-                      quality={100}
-                      layout="fill"
-                    />
+                    <Image src={UpokerIcon} alt={'upoker'} layout="fill" />
                   </div>
                 </Link>
                 <Link href="/download/PPPOKER">
                   <div className="aspect-square w-24 2xl:w-28 rounded-2xl grid place-content-center hover:-translate-y-2 duration-200 relative">
-                    <Image
-                      src={PppokerIcon}
-                      alt={'pppoker'}
-                      priority={true}
-                      quality={100}
-                      layout="fill"
-                    />
+                    <Image src={PppokerIcon} alt={'pppoker'} layout="fill" />
                   </div>
                 </Link>
                 <Link href="/download/POKERBROS">
@@ -104,8 +86,6 @@ const Hero: React.FC = () => {
                     <Image
                       src={PokerbrosIcon}
                       alt={'pokerbros'}
-                      priority={true}
-                      quality={100}
                       layout="fill"
                     />
                   </div>
@@ -130,12 +110,7 @@ const Hero: React.FC = () => {
       <div className="lg:hidden grid grid-cols-2 gap-6 mt-20 max-w-[520px] z-10">
         <Link href="/download/GGPOKER">
           <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6 cursor-pointer">
-            <Image
-              src={RegistrationIcon}
-              alt="register"
-              priority={true}
-              quality={100}
-            />
+            <Image src={RegistrationIcon} alt="register" />
             <h3 className="text-white opacity-50 font-kanit text-xl">
               วิธีการสมัคร
             </h3>
@@ -148,12 +123,7 @@ const Hero: React.FC = () => {
               router.push(`promotion`)
             }}
           >
-            <Image
-              src={PromotionsIcon}
-              alt="promo"
-              priority={true}
-              quality={100}
-            />
+            <Image src={PromotionsIcon} alt="promo" />
             <h3 className="text-white opacity-50 font-kanit text-xl">
               โปรโมชั่นเด็ด
             </h3>
@@ -161,12 +131,7 @@ const Hero: React.FC = () => {
         </Link>
         <Link href="/newbie">
           <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6 cursor-pointer">
-            <Image
-              src={TechniquesIcon}
-              alt="tech"
-              priority={true}
-              quality={100}
-            />
+            <Image src={TechniquesIcon} alt="tech" />
             <h3 className="text-white opacity-50 font-kanit text-xl">
               เทคนิคการเล่น
             </h3>
@@ -174,12 +139,7 @@ const Hero: React.FC = () => {
         </Link>
         <Scroll to="community" smooth>
           <div className="flex flex-col items-center justify-center text-center bg-dark-400 aspect-square rounded-xl md:rounded-2xl space-y-4 md:space-y-6 cursor-pointer">
-            <Image
-              src={CommunityIcon}
-              alt="commu"
-              priority={true}
-              quality={100}
-            />
+            <Image src={CommunityIcon} alt="commu" />
             <h3 className="text-white opacity-50 font-kanit text-xl">
               คอมมูนิตี้
             </h3>

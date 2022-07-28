@@ -8,6 +8,7 @@ export interface IBlogPreview {
   categories: { title: string }[]
 }
 
+
 export interface IBlog {
   title: string
   description: string
