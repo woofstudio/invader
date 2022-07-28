@@ -7,6 +7,8 @@ import {
   HighlightVideo,
   LatestArticles,
 } from '../../components/article'
+import { metaConfig } from '../../config'
+import { Meta } from '../../config/Meta'
 import { IBlogPreview } from '../../types/interface'
 import { queryCategoryPreview } from '../../util'
 
@@ -20,7 +22,11 @@ const Articles: NextPage<Props> = ({
   categoryPreviews,
 }: Props) => {
   return (
-    <>
+    <section className="px-10 lg:px-20 2xl:px-36">
+      <Meta
+        title={metaConfig.articles.title}
+        description={metaConfig.articles.description}
+      />
       <EditorPick editorPreviews={editorPreviews} />
       <Catagories
         categoryPreviews={categoryPreviews}
@@ -28,7 +34,7 @@ const Articles: NextPage<Props> = ({
       />
       <FanPage />
       <HighlightVideo />
-    </>
+    </section>
   )
 }
 
