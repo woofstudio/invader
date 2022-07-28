@@ -1,10 +1,22 @@
 import Link from 'next/link'
+import Image, { StaticImageData } from 'next/image'
 import { useRouter } from 'next/router'
+
+import NewbieBanner from '../../../public/img/techniques/banner-newbie.jpg'
+import CasheBanner from '../../../public/img/techniques/banner-cashgame.jpg'
+import TournamentBanner from '../../../public/img/techniques/banner-tournament.jpg'
+import Invader101Banner from '../../../public/img/techniques/banner-newbie.jpg'
+
+import NewbieBannerMobile from '../../../public/img/techniques/mobile_banner-newbie.jpg'
+import CasheBannerMobile from '../../../public/img/techniques/mobile_banner-cashgame.jpg'
+import TournamentBannerMobile from '../../../public/img/techniques/mobile_banner-tournament.jpg'
+import Invader101BannerMobile from '../../../public/img/techniques/mobile_banner-newbie.jpg'
+
+import FanPageImg from '../../../public/img/article/fanpage-mobile.png'
 
 const TechniquesData = [
   {
     path: '/newbie',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-newbie.jpg')]",
     title: (
       <>
         Newbie
@@ -23,7 +35,6 @@ const TechniquesData = [
   },
   {
     path: '/cash-game',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-cashgame.jpg')]",
     title: (
       <>
         Cash
@@ -42,7 +53,6 @@ const TechniquesData = [
   },
   {
     path: '/tournament',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-tournament.jpg')]",
     title: (
       <>
         MTT
@@ -61,7 +71,6 @@ const TechniquesData = [
   },
   {
     path: '/101',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-tournament.jpg')]",
     title: <>Invader 101</>,
     description: (
       <>
@@ -76,27 +85,46 @@ const TechniquesData = [
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const router = useRouter()
+  let bannerImage: StaticImageData = NewbieBanner
+  let bannerMobileImage: StaticImageData = NewbieBannerMobile
+
+  if (router.pathname === '/newbie') {
+    bannerImage = NewbieBanner
+    bannerMobileImage = NewbieBannerMobile
+  } else if (router.pathname === '/cash-game') {
+    bannerImage = CasheBanner
+    bannerMobileImage = CasheBannerMobile
+  } else if (router.pathname === '/tournament') {
+    bannerImage = TournamentBanner
+    bannerMobileImage = TournamentBannerMobile
+  } else if (router.pathname === '/101') {
+    bannerImage = Invader101Banner
+    bannerMobileImage = Invader101BannerMobile
+  }
   return (
     <>
-      <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20">
+      <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20 -z-20">
         {/* heading & background */}
         <div
-          className={`w-full h-[65vh] bg-cover bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-[36%] lg:pt-40 ${
-            router.pathname === TechniquesData[0].path &&
-            TechniquesData[0].bgCoverCSS +
-              ' ' +
-              "bg-[url('/img/techniques/mobile_banner-newbie.jpg')]"
-          } ${
-            router.pathname === '/cash-game' &&
-            "lg:bg-[url('/img/techniques/banner-cashgame.jpg')] bg-[url('/img/techniques/mobile_banner-cashgame.jpg')]"
-          } ${
-            router.pathname === '/tournament' &&
-            "lg:bg-[url('/img/techniques/banner-tournament.jpg')] bg-[url('/img/techniques/mobile_banner-tournament.jpg')]"
-          } ${
-            router.pathname === '/101' &&
-            "lg:bg-[url('/img/techniques/banner-101.jpg')] bg-[url('/img/techniques/mobile_banner-101.jpg')]"
-          }`}
+          className={`w-full h-[65vh] px-10 lg:px-20 2xl:px-36 pt-[36%] lg:pt-40 relative`}
         >
+          <div className="hidden lg:block">
+            <Image
+              src={bannerImage}
+              alt={'banner'}
+              layout="fill"
+              className="-z-10"
+            />
+          </div>
+          <div className=" lg:hidden">
+            <Image
+              src={bannerMobileImage}
+              alt={'bannerMobile'}
+              layout="fill"
+              className="-z-10"
+            />
+          </div>
+
           <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-100">
             {TechniquesData.map((data) => {
               if (router.pathname === data.path) return data.title
@@ -132,7 +160,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-screen bg-[url('/img/article/fanpage-mobile.png')] bg-cover bg-center bg-no-repeat lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+        <div className="w-full h-screen lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+          <Image
+            src={FanPageImg}
+            alt={'fanpage'}
+            layout="fill"
+            className="-z-10"
+          />
           <h4 className="text-primary-100 font-druk text-3xl sm:text-4xl md:text-5xl text-center">
             VISIT OUR
             <br />
