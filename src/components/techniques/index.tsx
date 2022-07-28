@@ -12,10 +12,11 @@ import CasheBannerMobile from '../../../public/img/techniques/mobile_banner-cash
 import TournamentBannerMobile from '../../../public/img/techniques/mobile_banner-tournament.jpg'
 import Invader101BannerMobile from '../../../public/img/techniques/mobile_banner-newbie.jpg'
 
+import FanPageImg from '../../../public/img/article/fanpage-mobile.png'
+
 const TechniquesData = [
   {
     path: '/newbie',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-newbie.jpg')]",
     title: (
       <>
         Newbie
@@ -34,7 +35,6 @@ const TechniquesData = [
   },
   {
     path: '/cash-game',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-cashgame.jpg')]",
     title: (
       <>
         Cash
@@ -53,7 +53,6 @@ const TechniquesData = [
   },
   {
     path: '/tournament',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-tournament.jpg')]",
     title: (
       <>
         MTT
@@ -72,7 +71,6 @@ const TechniquesData = [
   },
   {
     path: '/101',
-    bgCoverCSS: "lg:bg-[url('/img/techniques/banner-101.jpg')]",
     title: <>Invader 101</>,
     description: (
       <>
@@ -114,8 +112,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Image
               src={bannerImage}
               alt={'banner'}
-              priority={true}
-              quality={100}
               layout="fill"
               className="-z-10"
             />
@@ -124,8 +120,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Image
               src={bannerMobileImage}
               alt={'bannerMobile'}
-              priority={true}
-              quality={100}
               layout="fill"
               className="-z-10"
             />
@@ -166,7 +160,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-screen bg-[url('/img/article/fanpage-mobile.png')] bg-cover bg-center bg-no-repeat lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+        <div className="w-full h-screen lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+          <Image
+            src={FanPageImg}
+            alt={'fanpage'}
+            layout="fill"
+            className="-z-10"
+          />
           <h4 className="text-primary-100 font-druk text-3xl sm:text-4xl md:text-5xl text-center">
             VISIT OUR
             <br />
