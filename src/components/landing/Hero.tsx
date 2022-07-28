@@ -146,13 +146,13 @@ const Hero: React.FC = () => {
           </div>
         </Scroll>
       </div>
-      <div className="col-span-2 flex flex-col items-center lg:hidden place-content-center pt-6">
+      {/* <div className="col-span-2 flex flex-col items-center lg:hidden place-content-center pt-6">
         <Scroll to="footer" smooth>
           <span className="font-kanit text-white opacity-50 font-extralight tracking-wider cursor-pointer">
             scroll down
           </span>
         </Scroll>
-      </div>
+      </div> */}
 
       {/* scroll down button */}
     </section>

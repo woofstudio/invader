@@ -20,7 +20,7 @@ const Links: React.FC = () => {
       <h1 className="font-medium text-4xl sm:text-5xl lg:text-6xl">
         โป๊กเกอร์
       </h1>
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-4 gap-6 text-black">
         <LinkButton href="/download/GGPOKER">
           <h6 className="font-kanit font-extralight italic text-2xl xl:text-3xl 2xl:text-4xl">
             วิธีการสมัคร

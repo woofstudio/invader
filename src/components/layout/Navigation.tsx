@@ -10,7 +10,7 @@ import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
 const TECHNIQUE_PATH = ['101', 'cash-game', 'newbie', 'tournament']
 
 export const Navigation: React.FC = () => {
-  const { events, back, pathname } = useRouter()
+  const { events, back, pathname, push } = useRouter()
   const [show, setShow] = useState(false)
   const [showApps, setShowApps] = useState(false)
   const [showTechniques, setShowTechniques] = useState(false)
@@ -73,13 +73,13 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-30">
+      <nav className="absolute top-0 w-full h-40 section-space-x flex items-center justify-between z-30 pl-8 sm:pl-10 md:pl-14 lg:pl-20 xl:pl-24 2xl:pl-32">
         {pathname === '/' ? (
           <Link href="/">
             <Image src={IvdLogoColor} alt="Invader Logo" />
           </Link>
         ) : (
-          <BsChevronLeft size={40} color="#FFD261" onClick={back} />
+          <BsChevronLeft size={40} color="#FFD261" onClick={() => push('/')} />
         )}
         <p
           className={`underline underline-offset-2 cursor-pointer text-sm ${

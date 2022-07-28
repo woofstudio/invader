@@ -14,11 +14,6 @@ export const Footer: React.FC = () => {
       id="footer"
       className="bg-black w-full 2xl:h-28 px-32 flex flex-col 2xl:flex-row justify-center 2xl:justify-between items-center py-20 2xl:py-0 space-y-20 2xl:space-y-0"
     >
-      <Link href="/" className="2xl:hidden block">
-        <a>
-          <Image src={IvdLogoColor} alt="logo-color" layout="fixed" />
-        </a>
-      </Link>
       <Link href="/" className="hidden 2xl:block">
         <a>
           <Image src={IvdLogoName} alt="logo-name" />
