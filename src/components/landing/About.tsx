@@ -7,9 +7,9 @@ const About: React.FC = () => {
       id="about"
       className="bg-dark-100 w-full px-12 lg:px-32 pt-24 pb-0 lg:pb-32 flex flex-col-reverse lg:flex-row justify-between items-center"
     >
-      <div className="flex-1 grid place-items-center mt-12 lg:mt-0">
-        <div className="w-[50%] pb-20">
-          <Image src={AboutImg} alt="finger" priority={true} />
+      <div className="flex-1 grid place-items-center mt-12 lg:mt-0 ">
+        <div className="w-[50%] pb-20 ">
+          <Image src={AboutImg} alt="finger" priority={true} height={1000} />
         </div>
       </div>
       <div className="flex-1 relative">
