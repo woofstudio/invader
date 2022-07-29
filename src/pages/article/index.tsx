@@ -22,7 +22,7 @@ const Articles: NextPage<Props> = ({
   categoryPreviews,
 }: Props) => {
   return (
-    <section className="px-10 lg:px-20 2xl:px-36">
+    <section>
       <Meta
         title={metaConfig.articles.title}
         description={metaConfig.articles.description}
