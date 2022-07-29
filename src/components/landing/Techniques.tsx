@@ -101,69 +101,89 @@ const Techniques: React.FC = () => {
         >
           <Link href="/newbie">
             <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
-              <Image
-                src={NewbieImg}
-                alt={'newbie'}
-                priority={true}
-                layout="fill"
-                className="-z-10"
-              />
-              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12 z-50">
                 Newbie
                 <br />
                 Tips
               </h3>
+
+              <div className="absolute top-0 left-0 right-0 bottom-0 inline sm:hidden">
+                <Image
+                  src={NewbieImg}
+                  alt={'newbie'}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  quality={100}
+                />
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
           <Link href="/cash-game">
             <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
-              <Image
-                src={CashImg}
-                alt={'cash'}
-                priority={true}
-                layout="fill"
-                className="-z-10"
-              />
-              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12 z-50">
                 Cash
                 <br />
                 Game
               </h3>
+
+              <div className="absolute top-0 left-0 right-0 bottom-0 inline sm:hidden">
+                <Image
+                  src={CashImg}
+                  alt={'cash'}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  quality={100}
+                />
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
           <Link href="/tournament">
             <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
-              <Image
-                src={TournamentImg}
-                alt={'tournament'}
-                priority={true}
-                layout="fill"
-                className="-z-10"
-              />
-              <h3 className="uppercase font-druk text-primary-100 text-3xl md:text-6xl mt-12">
+              <h3 className="uppercase font-druk text-primary-100 text-3xl md:text-6xl mt-12 z-50">
                 <span className="text-6xl">MTT</span>
                 <br />
                 Tournament
               </h3>
+
+              <div className="absolute top-0 left-0 right-0 bottom-0 inline sm:hidden">
+                <Image
+                  src={TournamentImg}
+                  alt={'tournament'}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  quality={100}
+                />
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
           <Link href="/101">
             <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
-              <Image
-                src={Invader101Img}
-                alt={'invader101'}
-                priority={true}
-                layout="fill"
-                className="-z-10"
-              />
-              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12">
+              <h3 className="uppercase font-druk text-primary-100 text-5xl md:text-6xl mt-12 z-50">
                 Invader
                 <br />
                 101
               </h3>
+
+              <div className="absolute top-0 left-0 right-0 bottom-0 inline sm:hidden">
+                <Image
+                  src={Invader101Img}
+                  alt={'invader101'}
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  quality={100}
+                />
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-dark-100 to-[rgba(37, 37, 37, 0)]"></div>
             </div>
           </Link>
