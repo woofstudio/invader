@@ -57,7 +57,7 @@ const TechniquesData = [
       <>
         MTT
         <br />
-        Tournament
+        <span className="text-2xl md:text-6xl">Tournament</span>
       </>
     ),
     description: (
