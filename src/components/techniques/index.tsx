@@ -106,26 +106,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="min-h-screen relative lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-500 lg:mx-20 xl:mx-24 2xl:mx-32 lg:mb-20 z-10">
         {/* heading & background */}
         <div
-          className={`w-full h-[65vh] px-10 lg:px-20 2xl:px-36 pt-[36%] lg:pt-40 relative`}
+          className={`w-full h-[85vh] lg:h-[65vh] px-10 lg:px-20 2xl:px-36 pt-40 sm:pt-[32%] lg:pt-40 relative flex flex-col justify-end lg:justify-start pb-20 lg:pb-0`}
         >
-          <div className="hidden lg:inline">
-            <Image
-              src={bannerImage}
-              alt={'banner'}
-              layout="fill"
-              className="-z-10"
-            />
-          </div>
-          <div className="lg:hidden">
-            <Image
-              src={bannerMobileImage}
-              alt={'bannerMobile'}
-              layout="fill"
-              className="-z-10"
-            />
-          </div>
-
-          <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-100">
+          <h1 className="uppercase font-druk font-bold text-5xl md:text-6xl lg:text-7xl text-primary-100">
             {TechniquesData.map((data) => {
               if (router.pathname === data.path) return data.title
             })}
@@ -135,9 +118,34 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               if (router.pathname === data.path) return data.description
             })}
           </p>
-          <hr className="inline lg:hidden border-primary-100 mt-10" />
+          <div className="hidden lg:inline">
+            <Image
+              src={bannerImage}
+              alt={'banner'}
+              objectFit="cover"
+              objectPosition={'center'}
+              priority
+              quality={100}
+              layout="fill"
+              className="-z-10"
+            />
+          </div>
+          <div className="lg:hidden">
+            <Image
+              src={bannerMobileImage}
+              alt={'bannerMobile'}
+              objectFit="cover"
+              objectPosition={'0% 10%'}
+              priority
+              quality={100}
+              layout="fill"
+              className="-z-10"
+            />
+          </div>
+
+          <hr className="inline md:hidden border-primary-100 mt-10" />
         </div>
-        <div className="absolute left-0 right-0 top-[53vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
+        <div className="absolute left-0 right-0 top-[73vh] lg:top-[53vh] h-[12vh] bg-gradient-to-t from-dark-500 to-[rgba(62, 62, 62, 0)]"></div>
         <div className="flex w-full">
           <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
             <MenuLink href="/newbie" title="Newbie Tips" />

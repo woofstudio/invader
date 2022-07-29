@@ -114,7 +114,11 @@ export const Navigation: React.FC = () => {
           }`}
           onClick={openSidebar}
         >
-          <FiMenu color="#C4C4C4" size={40} />
+          {pathname.substring(1) in TECHNIQUE_PATH ? (
+            <FiMenu color="#C4C4C4" size={40} />
+          ) : (
+            <FiMenu className="text-white lg:text-[#C4C4C4]" size={40} />
+          )}
         </div>
       </nav>
       <div
