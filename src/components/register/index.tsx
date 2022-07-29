@@ -7,6 +7,16 @@ import BROSIcon from '../../../public/img/register/pokerbros.png'
 import PPIcon from '../../../public/img/register/pppoker.png'
 import UIcon from '../../../public/img/register/upoker.png'
 
+import GGCover from '../../../public/img/register/desktop_register-banner_GG.jpg'
+import BROSCover from '../../../public/img/register/desktop_register-banner_BROS.jpg'
+import PPCover from '../../../public/img/register/desktop_register-banner_PP.jpg'
+import UCover from '../../../public/img/register/desktop_register-banner_U.jpg'
+
+import GGMobileCover from '../../../public/img/register/mobile_register-banner_GG.jpg'
+import BROSMobileCover from '../../../public/img/register/mobile_register-banner_BROS.jpg'
+import PPMobileCover from '../../../public/img/register/mobile_register-banner_PP.jpg'
+import UMobileCover from '../../../public/img/register/mobile_register-banner_U.jpg'
+
 const RegistersData = [
   {
     title: (
@@ -17,7 +27,7 @@ const RegistersData = [
     description: (
       <>
         แอพโป๊กเกอร์เอาใจสายทัวร์
-        <br />
+        <br className="hidden lg:inline" />
         Tournament จัดเต็ม ทั้งวัน ทั้งคืน
       </>
     ),
@@ -28,6 +38,8 @@ const RegistersData = [
     downloadLink:
       'https://download.good-game-network.com/mobile-page-customer/ggpoker/th',
     color: '#EA232B',
+    bgCover: GGCover,
+    bgMobileCover: GGMobileCover,
   },
   {
     title: (
@@ -38,7 +50,7 @@ const RegistersData = [
     description: (
       <>
         แอพสำหรับคนรักโป๊กเกอร์
-        <br />
+        <br className="hidden lg:inline" />
         จากคนรักโป๊กเกอร์ตัวจริง
       </>
     ),
@@ -48,6 +60,8 @@ const RegistersData = [
     iconImage: PPIcon,
     downloadLink: 'https://pppoker.net/',
     color: '#2AD16D',
+    bgCover: PPCover,
+    bgMobileCover: PPMobileCover,
   },
   {
     title: (
@@ -58,7 +72,7 @@ const RegistersData = [
     description: (
       <>
         โป๊กเกอร์ออนไลน์เจ้าแรกในไทย โต๊ะเยอะ Range กว้าง
-        <br />
+        <br className="hidden lg:inline" />
         เล่นหนักเล่นเบา แอพเดียวมีครบ
       </>
     ),
@@ -68,6 +82,8 @@ const RegistersData = [
     iconImage: UIcon,
     downloadLink: 'https://upoker.net/',
     color: '#FFB339',
+    bgCover: UCover,
+    bgMobileCover: UMobileCover,
   },
   {
     title: (
@@ -79,7 +95,7 @@ const RegistersData = [
     description: (
       <>
         เล่นโป็กเกอร์ออนไลน์กับเพื่อนได้ทุกที่ทุกเวลา
-        <br />
+        <br className="hidden lg:inline" />
         ด้วยแอพที่ออกแบบมาให้สำหรับมือใหม่ไปจนถึงมือโปร
       </>
     ),
@@ -90,6 +106,8 @@ const RegistersData = [
     iconImage: BROSIcon,
     downloadLink: 'https://pokerbros.net/',
     color: '#5D3B8C',
+    bgCover: BROSCover,
+    bgMobileCover: BROSMobileCover,
   },
 ]
 
@@ -100,26 +118,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="min-h-screen lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-100 lg:bg-dark-200 lg:mx-20 mb-20">
       {/* heading & background */}
       <div
-        className={`w-full h-[85vh] xl:h-[55vh] bg-cover bg-bottom lg:bg-right bg-no-repeat px-10 lg:px-20 2xl:px-36 flex flex-col justify-center ${
-          router.pathname === RegistersData[0].path &&
-          RegistersData[0].bgCoverCSS + ' ' + RegistersData[0].bgMobileCoverCSS
-        } ${
-          router.pathname === RegistersData[1].path &&
-          RegistersData[1].bgCoverCSS + ' ' + RegistersData[1].bgMobileCoverCSS
-        } ${
-          router.pathname === RegistersData[2].path &&
-          RegistersData[2].bgCoverCSS + ' ' + RegistersData[2].bgMobileCoverCSS
-        } ${
-          router.pathname === RegistersData[3].path &&
-          RegistersData[3].bgCoverCSS + ' ' + RegistersData[3].bgMobileCoverCSS
-        }`}
+        className={`relative w-full h-[85vh] lg:h-[55vh] px-10 lg:px-20 2xl:px-36 flex flex-col justify-center`}
       >
-        <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+        <h1 className="uppercase font-druk font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white z-50">
           {RegistersData.map((data) => {
             if (router.pathname === data.path) return data.title
           })}
         </h1>
-        <p className="font-kanit font-light text-lg lg:text-xl text-opacity-90 text-white mt-8 mb-12">
+        <p className="font-kanit font-light text-lg lg:text-xl text-opacity-90 text-white mt-8 mb-32 lg:mb-12 z-50">
           {RegistersData.map((data) => {
             if (router.pathname === data.path) return data.description
           })}
@@ -130,7 +136,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <a
                 key={idx}
                 href={data.downloadLink}
-                className={`hidden lg:inline rounded-full px-14 py-4 uppercase w-fit text-white`}
+                target="_blank"
+                rel="noreferer"
+                className={`hidden lg:inline rounded-full px-14 py-4 uppercase w-fit text-white z-50`}
                 style={{
                   backgroundColor: data.color,
                 }}
@@ -139,10 +147,40 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </a>
             )
         })}
+
+        {RegistersData.map((data, idx) => {
+          if (router.pathname === data.path)
+            return (
+              <>
+                <div className="absolute top-0 left-0 right-0 bottom-0 hidden lg:inline">
+                  <Image
+                    src={data.bgCover}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition={'right'}
+                    priority
+                    quality={100}
+                    key={idx}
+                  />
+                </div>
+                <div className="absolute top-0 left-0 right-0 bottom-0 inline lg:hidden">
+                  <Image
+                    src={data.bgMobileCover}
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition={'bottom'}
+                    priority
+                    quality={100}
+                    key={idx}
+                  />
+                </div>
+              </>
+            )
+        })}
       </div>
 
       {/* body */}
-      <div className="flex w-full pt-12">
+      <div className="flex w-full pt-6 lg:pt-12">
         <div className="w-96 hidden lg:flex flex-col px-10 select-none space-y-8">
           <MenuLink
             href="/download/GGPOKER"
