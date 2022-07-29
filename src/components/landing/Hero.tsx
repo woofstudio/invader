@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
       className="sm:min-h-screen lg:h-screen w-full px-8 sm:px-10 md:px-14 lg:px-20 xl:px-24 2xl:px-32 bg-dark-100 flex flex-col lg:flex-row lg:items-center justify-center lg:justify-between relative mb-40 md:mb-0"
     >
       <div className="space-y-8 z-20 relative lg:pb-60">
-        <h2 className="uppercase font-druk text-white mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-lg">
+        <h2 className="uppercase font-druk text-white font-bold mt-32 text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl max-w-lg">
           Poker Invader
         </h2>
         <h3 className="font-kanit font-extralight tracking-widest md:text-2xl text-white">

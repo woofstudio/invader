@@ -100,7 +100,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="min-h-screen lg:mt-40 overflow-hidden lg:rounded-xl bg-dark-100 lg:bg-dark-200 lg:mx-20 mb-20">
       {/* heading & background */}
       <div
-        className={`w-full h-[85vh] xl:h-[55vh] bg-cover bg-bottom lg:bg-right bg-no-repeat px-10 lg:px-20 2xl:px-36 pt-40 ${
+        className={`w-full h-[85vh] xl:h-[55vh] bg-cover bg-bottom lg:bg-right bg-no-repeat px-10 lg:px-20 2xl:px-36 flex flex-col justify-center ${
           router.pathname === RegistersData[0].path &&
           RegistersData[0].bgCoverCSS + ' ' + RegistersData[0].bgMobileCoverCSS
         } ${
@@ -130,7 +130,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <a
                 key={idx}
                 href={data.downloadLink}
-                className={`hidden lg:inline rounded-full px-14 py-4 uppercase text-white`}
+                className={`hidden lg:inline rounded-full px-14 py-4 uppercase w-fit text-white`}
                 style={{
                   backgroundColor: data.color,
                 }}
