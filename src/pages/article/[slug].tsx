@@ -44,7 +44,7 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
         </div>
       </div>
 
-      <div className="bg-dark-200 py-12 px-12 md:px-20 max-width">
+      <div className="bg-dark-200 py-12 px-12 md:px-44 max-width">
         <div className="mx-auto space-y-10">
           <div className="flex space-x-4">
             {blog.categories.map((elem, index) => {
@@ -64,17 +64,7 @@ const Blog: NextPage<Props> = ({ blog, blogPreviews }: Props) => {
                 {moment(new Date(blog.publishedAt)).format('DD MMMM YYYY')}
               </p>
             </div>
-            <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold">{blog.title}</h1>
-              <div>
-                <Image
-                  src="/favicon-32x32.png"
-                  alt="icon"
-                  height={24}
-                  width={24}
-                />
-              </div>
-            </div>
+            <h1 className="text-2xl font-bold">{blog.title}</h1>
           </div>
           <PortableText
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}

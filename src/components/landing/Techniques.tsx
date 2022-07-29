@@ -26,7 +26,7 @@ const Techniques: React.FC = () => {
         <Link href="/newbie">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <Image src={NewbieImg} alt={'newbie'} layout="fill" />
-            <h3 className="uppercase font-druk text-primary-100 lg:text-3xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
+            <h3 className="uppercase font-druk font-bold text-primary-100 lg:text-3xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
               Newbie
               <br />
               Tips
@@ -40,7 +40,7 @@ const Techniques: React.FC = () => {
         <Link href="/cash-game">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <Image src={CashImg} alt={'cash'} layout="fill" />
-            <h3 className="uppercase font-druk text-primary-100 lg:text-4xl xl:text-5xl 2xl:text-6xl mt-12 z-20">
+            <h3 className="uppercase font-druk font-bold text-primary-100 lg:text-4xl xl:text-5xl 2xl:text-6xl mt-12 z-20">
               Cash
               <br />
               Game
@@ -54,7 +54,7 @@ const Techniques: React.FC = () => {
         <Link href="/tournament">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <Image src={TournamentImg} alt={'tournament'} layout="fill" />
-            <h3 className="uppercase font-druk text-primary-100 lg:text-5xl 2xl:text-6xl mt-12 z-20">
+            <h3 className="uppercase font-druk font-bold text-primary-100 lg:text-5xl 2xl:text-6xl mt-12 z-20">
               MTT
               <br />
               <span className="text-lg xl:text-xl 2xl:text-3xl">
@@ -70,7 +70,7 @@ const Techniques: React.FC = () => {
         <Link href="/101">
           <div className="aspect-[6/8] rounded-2xl flex flex-col items-center justify-between text-center duration-500 hover:-translate-y-4 relative overflow-hidden cursor-pointer">
             <Image src={Invader101Img} alt={'invader101'} layout="fill" />
-            <h3 className="uppercase font-druk text-primary-100 lg:text-2xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
+            <h3 className="uppercase font-druk font-bold text-primary-100 lg:text-2xl xl:text-4xl 2xl:text-5xl mt-12 z-20">
               Invader
               <br />
               101

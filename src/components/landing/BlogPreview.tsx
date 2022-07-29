@@ -18,11 +18,11 @@ const BlogPreview: React.FC<Props> = ({ blogPreview }: Props) => {
           alt={blogPreview.title}
           layout="fill"
         />
-        <div className="z-20 p-8 space-y-4">
+        <div className="z-10 px-4 pb-2">
           {/* title */}
-          <h3 className="font-medium text-2xl">{blogPreview.title}</h3>
+          <h3 className="font-medium text-lg">{blogPreview.title}</h3>
           {/* posted date */}
-          <h4 className="font-extralight">
+          <h4 className="font-extralight text-sm">
             {moment(new Date(blogPreview.publishedAt)).format('DD MMMM')}
           </h4>
         </div>
