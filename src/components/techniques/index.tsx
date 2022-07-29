@@ -116,7 +116,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               className="-z-10"
             />
           </div>
-          <div className=" lg:hidden">
+          <div className="lg:hidden">
             <Image
               src={bannerMobileImage}
               alt={'bannerMobile'}
@@ -160,7 +160,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="w-full h-screen lg:hidden flex flex-col items-center space-y-10 pt-[40%]">
+        <div className="w-full h-screen lg:hidden flex flex-col items-center space-y-10 pt-[40%] relative z-0">
           <Image
             src={FanPageImg}
             alt={'fanpage'}

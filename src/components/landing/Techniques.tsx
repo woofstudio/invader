@@ -100,7 +100,7 @@ const Techniques: React.FC = () => {
           autoplayInterval={2000}
         >
           <Link href="/newbie">
-            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center">
+            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
               <Image
                 src={NewbieImg}
                 alt={'newbie'}
@@ -117,7 +117,7 @@ const Techniques: React.FC = () => {
             </div>
           </Link>
           <Link href="/cash-game">
-            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center">
+            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
               <Image
                 src={CashImg}
                 alt={'cash'}
@@ -134,7 +134,7 @@ const Techniques: React.FC = () => {
             </div>
           </Link>
           <Link href="/tournament">
-            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center">
+            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
               <Image
                 src={TournamentImg}
                 alt={'tournament'}
@@ -151,7 +151,7 @@ const Techniques: React.FC = () => {
             </div>
           </Link>
           <Link href="/101">
-            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center">
+            <div className="h-[720px] cursor-pointer relative flex flex-col justify-between items-center text-center overflow-hidden">
               <Image
                 src={Invader101Img}
                 alt={'invader101'}
