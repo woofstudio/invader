@@ -108,7 +108,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div
           className={`w-full h-[65vh] px-10 lg:px-20 2xl:px-36 pt-[36%] lg:pt-40 relative`}
         >
-          <div className="hidden lg:block">
+          <div className="hidden lg:inline">
             <Image
               src={bannerImage}
               alt={'banner'}

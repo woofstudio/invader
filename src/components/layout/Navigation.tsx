@@ -79,7 +79,12 @@ export const Navigation: React.FC = () => {
             <Image src={IvdLogoColor} alt="Invader Logo" />
           </Link>
         ) : (
-          <BsChevronLeft size={40} color="#FFD261" onClick={() => push('/')} />
+          <BsChevronLeft
+            className="cursor-pointer"
+            size={40}
+            color="#FFD261"
+            onClick={() => push('/')}
+          />
         )}
         <p
           className={`underline underline-offset-2 cursor-pointer text-sm ${

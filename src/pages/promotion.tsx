@@ -198,7 +198,9 @@ const Promotion: NextPage<Props> = ({
         </div>
 
         <div>
-          <h1 className="text-4xl">{mapMonth[monthPromotion.month]}</h1>
+          <h1 className="text-4xl font-sans">
+            {mapMonth[monthPromotion.month]}
+          </h1>
         </div>
 
         <div className="group relative text-sm hidden md:block">

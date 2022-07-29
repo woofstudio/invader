@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Link as Scroll } from 'react-scroll'
+import { animateScroll } from 'react-scroll'
 import { FiChevronUp } from 'react-icons/fi'
 import { ImYoutube } from 'react-icons/im'
 import { IoLogoFacebook } from 'react-icons/io'
 import IvdLogoColor from '../../../public/ivd-logo-color.svg'
 import IvdLogoName from '../../../public/ivd-logo-name.png'
 import { FACEBOOK_PAGE, YOUTUBE_CHANNEL } from '../../config'
+import { duration } from 'moment'
 
 export const Footer: React.FC = () => {
   return (
@@ -51,13 +52,14 @@ export const Footer: React.FC = () => {
 
       {/* scroll up for desktop and social media links */}
       <div className="flex items-center 2xl:space-x-20">
-        <Scroll
-          to="hero"
-          smooth
+        <div
+          onClick={() => {
+            animateScroll.scrollToTop()
+          }}
           className="place-content-center rounded-full bg-primary-200 text-dark-200 w-14 h-14 text-4xl cursor-pointer hidden 2xl:grid"
         >
           <FiChevronUp />
-        </Scroll>
+        </div>
         <div className="flex items-center text-white text-4xl space-x-6">
           <Link href={FACEBOOK_PAGE} target="_blank" rel="noreferrer">
             <a>
