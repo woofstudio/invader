@@ -4,6 +4,7 @@ import {
   SanityImageSource,
   SanityProjectDetails,
 } from '@sanity/image-url/lib/types/types'
+
 import {
   ClientConfig,
   createClient,
